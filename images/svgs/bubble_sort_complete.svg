@@ -6,13 +6,15 @@
   <text x="450" y="54" text-anchor="middle" fill="#777" font-size="13">Compare adjacent pairs, swap if out of order. Each pass locks the largest unsorted element at the end.</text>
 
   <!-- Legend -->
-  <rect x="600" y="70" width="280" height="90" rx="8" fill="#f8f9fa" stroke="#ddd" stroke-width="1"/>
-  <rect x="616" y="86" width="16" height="12" rx="3" fill="#3498db"/>
-  <text x="638" y="96" fill="#555" font-size="11">Unsorted</text>
-  <rect x="616" y="104" width="16" height="12" rx="3" fill="#e74c3c"/>
-  <text x="638" y="114" fill="#555" font-size="11">Compared / swapped</text>
-  <rect x="616" y="122" width="16" height="12" rx="3" fill="#27ae60"/>
-  <text x="638" y="132" fill="#555" font-size="11">Locked in final position</text>
+  <rect x="580" y="70" width="300" height="106" rx="8" fill="#f8f9fa" stroke="#ddd" stroke-width="1"/>
+  <rect x="596" y="86" width="16" height="12" rx="3" fill="#3498db"/>
+  <text x="618" y="96" fill="#555" font-size="11">Unsorted</text>
+  <rect x="596" y="104" width="16" height="12" rx="3" fill="#e74c3c"/>
+  <text x="618" y="114" fill="#555" font-size="11">Compared &#x2192; swapped</text>
+  <rect x="596" y="122" width="16" height="12" rx="3" fill="#5dade2"/>
+  <text x="618" y="132" fill="#555" font-size="11">Compared &#x2192; no swap</text>
+  <rect x="596" y="140" width="16" height="12" rx="3" fill="#27ae60"/>
+  <text x="618" y="150" fill="#555" font-size="11">Locked in final position</text>
   <text x="770" y="96" fill="#555" font-size="11" font-weight="bold">O(n&#xB2;)</text>
   <text x="770" y="114" fill="#555" font-size="11" font-weight="bold">O(1) space</text>
   <text x="770" y="132" fill="#555" font-size="11" font-weight="bold">Stable</text>
@@ -66,15 +68,15 @@
   <text x="85" y="260" fill="#888" font-size="11">5 &lt; 8?</text>
   <rect x="155" y="246" width="46" height="28" rx="4" fill="#3498db"/>
   <text x="178" y="265" text-anchor="middle" fill="#fff" font-size="13">2</text>
-  <rect x="207" y="246" width="46" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <rect x="207" y="246" width="46" height="28" rx="4" fill="#5dade2" stroke="#2e86c1" stroke-width="1.5"/>
   <text x="230" y="265" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">5</text>
-  <rect x="259" y="246" width="46" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <rect x="259" y="246" width="46" height="28" rx="4" fill="#5dade2" stroke="#2e86c1" stroke-width="1.5"/>
   <text x="282" y="265" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">8</text>
   <rect x="311" y="246" width="46" height="28" rx="4" fill="#3498db"/>
   <text x="334" y="265" text-anchor="middle" fill="#fff" font-size="13">1</text>
   <rect x="363" y="246" width="46" height="28" rx="4" fill="#3498db"/>
   <text x="386" y="265" text-anchor="middle" fill="#fff" font-size="13">4</text>
-  <text x="425" y="260" fill="#27ae60" font-size="12">No &#x2192; no swap</text>
+  <text x="425" y="260" fill="#2e86c1" font-size="12">No &#x2192; already in order</text>
 
   <!-- j=2: compare 8,1 — SWAP -->
   <text x="40" y="300" fill="#2980b9" font-size="12" font-weight="bold">j = 2</text>
