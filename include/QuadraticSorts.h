@@ -14,8 +14,9 @@
 //   - Nested loops: n × n = n² -- when n doubles, runtime quadruples
 //
 // Key design decisions:
-//   - Free functions taking std::vector<int>& (not class methods)
-//   - Ascending order, in-place O(1) space
+//   - Standalone functions (not inside a class) -- call bubble_sort(data) directly
+//   - Take std::vector<int>& by reference -- sorts the original vector in-place
+//   - Ascending order, O(1) extra space
 //
 
 // ---------------------------------------------------------------------------
