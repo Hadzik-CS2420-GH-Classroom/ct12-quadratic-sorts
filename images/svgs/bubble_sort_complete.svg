@@ -11,7 +11,7 @@
   <text x="618" y="96" fill="#555" font-size="11">Unsorted</text>
   <rect x="596" y="104" width="16" height="12" rx="3" fill="#e74c3c"/>
   <text x="618" y="114" fill="#555" font-size="11">Compared &#x2192; swapped</text>
-  <rect x="596" y="122" width="16" height="12" rx="3" fill="#5dade2"/>
+  <rect x="596" y="122" width="16" height="12" rx="3" fill="#f39c12"/>
   <text x="618" y="132" fill="#555" font-size="11">Compared &#x2192; no swap</text>
   <rect x="596" y="140" width="16" height="12" rx="3" fill="#27ae60"/>
   <text x="618" y="150" fill="#555" font-size="11">Locked in final position</text>
@@ -68,15 +68,15 @@
   <text x="85" y="260" fill="#888" font-size="11">5 &lt; 8?</text>
   <rect x="155" y="246" width="46" height="28" rx="4" fill="#3498db"/>
   <text x="178" y="265" text-anchor="middle" fill="#fff" font-size="13">2</text>
-  <rect x="207" y="246" width="46" height="28" rx="4" fill="#5dade2" stroke="#2e86c1" stroke-width="1.5"/>
+  <rect x="207" y="246" width="46" height="28" rx="4" fill="#f39c12" stroke="#e67e22" stroke-width="1.5"/>
   <text x="230" y="265" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">5</text>
-  <rect x="259" y="246" width="46" height="28" rx="4" fill="#5dade2" stroke="#2e86c1" stroke-width="1.5"/>
+  <rect x="259" y="246" width="46" height="28" rx="4" fill="#f39c12" stroke="#e67e22" stroke-width="1.5"/>
   <text x="282" y="265" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">8</text>
   <rect x="311" y="246" width="46" height="28" rx="4" fill="#3498db"/>
   <text x="334" y="265" text-anchor="middle" fill="#fff" font-size="13">1</text>
   <rect x="363" y="246" width="46" height="28" rx="4" fill="#3498db"/>
   <text x="386" y="265" text-anchor="middle" fill="#fff" font-size="13">4</text>
-  <text x="425" y="260" fill="#2e86c1" font-size="12">No &#x2192; already in order</text>
+  <text x="425" y="260" fill="#e67e22" font-size="12">No &#x2192; already in order</text>
 
   <!-- j=2: compare 8,1 — SWAP -->
   <text x="40" y="300" fill="#2980b9" font-size="12" font-weight="bold">j = 2</text>
