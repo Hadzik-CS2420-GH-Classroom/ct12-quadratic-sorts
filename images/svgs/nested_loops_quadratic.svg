@@ -17,11 +17,12 @@
   <text x="60" y="184" fill="#a6e3a1" font-size="13" font-family="Consolas, monospace">    compare &amp; maybe swap</text>
 
   <!-- Math breakdown -->
-  <rect x="20" y="220" width="380" height="110" rx="8" fill="#f4f6f7" stroke="#bdc3c7" stroke-width="1.5"/>
-  <text x="210" y="246" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">Total comparisons:</text>
-  <text x="210" y="270" text-anchor="middle" fill="#555" font-size="13">(n&#x2212;1) + (n&#x2212;2) + ... + 2 + 1</text>
-  <text x="210" y="294" text-anchor="middle" fill="#555" font-size="13">= n(n&#x2212;1) / 2</text>
-  <text x="210" y="320" text-anchor="middle" fill="#e74c3c" font-size="16" font-weight="bold">= O(n&#xB2;)</text>
+  <rect x="20" y="220" width="380" height="180" rx="8" fill="#f4f6f7" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="210" y="256" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">Total comparisons:</text>
+  <text x="210" y="286" text-anchor="middle" fill="#555" font-size="13">(n&#x2212;1) + (n&#x2212;2) + ... + 2 + 1</text>
+  <text x="210" y="316" text-anchor="middle" fill="#555" font-size="13">= n(n&#x2212;1) / 2</text>
+  <text x="210" y="352" text-anchor="middle" fill="#e74c3c" font-size="20" font-weight="bold">= O(n&#xB2;)</text>
+  <text x="210" y="386" text-anchor="middle" fill="#888" font-size="12">When n doubles, work quadruples</text>
 
   <!-- ===== RIGHT: Growth Curve Graph ===== -->
   <rect x="430" y="70" width="450" height="330" rx="8" fill="#f8f9fa" stroke="#ddd" stroke-width="1.5"/>
