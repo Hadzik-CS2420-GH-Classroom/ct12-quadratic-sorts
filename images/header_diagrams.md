@@ -11,14 +11,21 @@ Conceptual diagrams referenced from `QuadraticSorts.h`.
 
 ---
 
-## 2. How Each Quadratic Sort Works
-*`QuadraticSorts.h` -- visual overview of all three O(n^2) sorts on the same input*
+## 2. The Three Quadratic Sorts
+*`QuadraticSorts.h` -- visual overview of all three O(n^2) sorts at a glance*
 
-![How Each Quadratic Sort Works](svgs/quadratic_sorts_overview.svg)
+![The Three Quadratic Sorts](svgs/quadratic_sorts_overview.svg)
 
 ---
 
-## 3. Bubble Sort -- Complete Walkthrough
+## 3. Why Nested Loops = O(n^2)
+*`QuadraticSorts.h` -- nested loops, math breakdown, and O(n^2) growth curve*
+
+![Why Nested Loops = O(n^2)](svgs/nested_loops_quadratic.svg)
+
+---
+
+## 4. Bubble Sort -- Complete Walkthrough
 *`QuadraticSorts.h` -- every pass on [5, 2, 8, 1, 4] with early exit*
 
 ![Bubble Sort -- Complete Walkthrough](svgs/bubble_sort_complete.svg)
@@ -27,24 +34,17 @@ Conceptual diagrams referenced from `QuadraticSorts.h`.
 
 ---
 
-## 4. Insertion Sort -- Complete Walkthrough
+## 5. Insertion Sort -- Complete Walkthrough
 *`QuadraticSorts.h` -- every insertion on [5, 2, 8, 1, 4] showing shifts*
 
 ![Insertion Sort -- Complete Walkthrough](svgs/insertion_sort_complete.svg)
 
 ---
 
-## 5. Selection Sort -- Complete Walkthrough
+## 6. Selection Sort -- Complete Walkthrough
 *`QuadraticSorts.h` -- every pass on [5, 2, 8, 1, 4] showing min-find and swap*
 
 ![Selection Sort -- Complete Walkthrough](svgs/selection_sort_complete.svg)
-
----
-
-## 6. Why Nested Loops = O(n^2)
-*`QuadraticSorts.h` -- all three sorts use nested loops, giving quadratic growth*
-
-![Why Nested Loops = O(n^2)](svgs/nested_loops_quadratic.svg)
 
 ---
 
