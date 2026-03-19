@@ -33,7 +33,7 @@
   <text x="376" y="97" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">4</text>
 
   <!-- ===== i=0 — DETAILED ===== -->
-  <rect x="20" y="190" width="860" height="310" rx="8" fill="#fff" stroke="#e67e22" stroke-width="1.5"/>
+  <rect x="20" y="190" width="860" height="324" rx="8" fill="#fff" stroke="#e67e22" stroke-width="1.5"/>
   <text x="40" y="212" fill="#e67e22" font-size="14" font-weight="bold">i = 0</text>
   <text x="100" y="212" fill="#777" font-size="11">Scan entire array for minimum, then swap it to index 0</text>
 
