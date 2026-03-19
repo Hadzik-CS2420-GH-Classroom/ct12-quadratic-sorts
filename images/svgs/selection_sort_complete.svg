@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" fill="#1a1a1a" font-size="24" font-weight="bold">Selection Sort &#x2014; Complete Walkthrough</text>
+  <text x="450" y="54" text-anchor="middle" fill="#777" font-size="13">Find the minimum in the unsorted region, swap it into the next sorted position. Repeat.</text>
+
+  <!-- Legend -->
+  <rect x="580" y="70" width="300" height="80" rx="8" fill="#f8f9fa" stroke="#ddd" stroke-width="1"/>
+  <rect x="596" y="84" width="20" height="14" rx="3" fill="#e67e22"/>
+  <text x="622" y="95" fill="#555" font-size="11">Scanning for minimum</text>
+  <rect x="596" y="104" width="20" height="14" rx="3" fill="#e74c3c"/>
+  <text x="622" y="115" fill="#555" font-size="11">Minimum found</text>
+  <rect x="596" y="124" width="20" height="14" rx="3" fill="#27ae60"/>
+  <text x="622" y="135" fill="#555" font-size="11">Locked in final position</text>
+  <text x="740" y="95" fill="#555" font-size="11" font-weight="bold">Time: O(n&#xB2;) always</text>
+  <text x="740" y="115" fill="#555" font-size="11" font-weight="bold">Space: O(1)</text>
+  <text x="740" y="135" fill="#e74c3c" font-size="11" font-weight="bold">Stable: No</text>
+
+  <!-- Input -->
+  <text x="40" y="92" fill="#555" font-size="13" font-weight="bold">Input:</text>
+  <rect x="110" y="76" width="52" height="32" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="136" y="97" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">5</text>
+  <rect x="170" y="76" width="52" height="32" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="196" y="97" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">2</text>
+  <rect x="230" y="76" width="52" height="32" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="256" y="97" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">8</text>
+  <rect x="290" y="76" width="52" height="32" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="316" y="97" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">1</text>
+  <rect x="350" y="76" width="52" height="32" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="376" y="97" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">4</text>
+
+  <!-- ===== PASS 1: i=0 ===== -->
+  <rect x="20" y="120" width="860" height="72" rx="8" fill="#fff" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="40" y="142" fill="#e67e22" font-size="14" font-weight="bold">i = 0</text>
+  <text x="100" y="142" fill="#777" font-size="11">Scan all 5 elements for minimum</text>
+
+  <text x="40" y="164" fill="#888" font-size="11">Scan:</text>
+  <text x="90" y="164" fill="#555" font-size="11">5, 2, 8, <tspan fill="#e74c3c" font-weight="bold">1</tspan>, 4</text>
+  <text x="220" y="164" fill="#e74c3c" font-size="11" font-weight="bold">min = 1 at index 3</text>
+  <text x="400" y="164" fill="#e74c3c" font-size="11">swap(data[0], data[3]) &#x2192; swap(5, 1)</text>
+
+  <!-- Result -->
+  <text x="40" y="184" fill="#888" font-size="11">Result:</text>
+  <rect x="110" y="170" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="131" y="188" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">1</text>
+  <rect x="158" y="170" width="42" height="26" rx="4" fill="#e67e22"/>
+  <text x="179" y="188" text-anchor="middle" fill="#fff" font-size="12">2</text>
+  <rect x="206" y="170" width="42" height="26" rx="4" fill="#e67e22"/>
+  <text x="227" y="188" text-anchor="middle" fill="#fff" font-size="12">8</text>
+  <rect x="254" y="170" width="42" height="26" rx="4" fill="#e67e22"/>
+  <text x="275" y="188" text-anchor="middle" fill="#fff" font-size="12">5</text>
+  <rect x="302" y="170" width="42" height="26" rx="4" fill="#e67e22"/>
+  <text x="323" y="188" text-anchor="middle" fill="#fff" font-size="12">4</text>
+  <text x="370" y="184" fill="#27ae60" font-size="11">&#x2190; 1 locked</text>
+
+  <!-- ===== PASS 2: i=1 ===== -->
+  <rect x="20" y="202" width="860" height="72" rx="8" fill="#fff" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="40" y="224" fill="#e67e22" font-size="14" font-weight="bold">i = 1</text>
+  <text x="100" y="224" fill="#777" font-size="11">Scan indices 1&#x2013;4 for minimum</text>
+
+  <text x="40" y="246" fill="#888" font-size="11">Scan:</text>
+  <text x="90" y="246" fill="#555" font-size="11"><tspan fill="#e74c3c" font-weight="bold">2</tspan>, 8, 5, 4</text>
+  <text x="220" y="246" fill="#e74c3c" font-size="11" font-weight="bold">min = 2 at index 1</text>
+  <text x="400" y="246" fill="#27ae60" font-size="11">Already in position &#x2192; no swap needed</text>
+
+  <text x="40" y="266" fill="#888" font-size="11">Result:</text>
+  <rect x="110" y="252" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="131" y="270" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">1</text>
+  <rect x="158" y="252" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="179" y="270" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">2</text>
+  <rect x="206" y="252" width="42" height="26" rx="4" fill="#e67e22"/>
+  <text x="227" y="270" text-anchor="middle" fill="#fff" font-size="12">8</text>
+  <rect x="254" y="252" width="42" height="26" rx="4" fill="#e67e22"/>
+  <text x="275" y="270" text-anchor="middle" fill="#fff" font-size="12">5</text>
+  <rect x="302" y="252" width="42" height="26" rx="4" fill="#e67e22"/>
+  <text x="323" y="270" text-anchor="middle" fill="#fff" font-size="12">4</text>
+  <text x="370" y="266" fill="#27ae60" font-size="11">&#x2190; 2 locked</text>
+
+  <!-- ===== PASS 3: i=2 ===== -->
+  <rect x="20" y="284" width="860" height="72" rx="8" fill="#fff" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="40" y="306" fill="#e67e22" font-size="14" font-weight="bold">i = 2</text>
+  <text x="100" y="306" fill="#777" font-size="11">Scan indices 2&#x2013;4 for minimum</text>
+
+  <text x="40" y="328" fill="#888" font-size="11">Scan:</text>
+  <text x="90" y="328" fill="#555" font-size="11">8, 5, <tspan fill="#e74c3c" font-weight="bold">4</tspan></text>
+  <text x="220" y="328" fill="#e74c3c" font-size="11" font-weight="bold">min = 4 at index 4</text>
+  <text x="400" y="328" fill="#e74c3c" font-size="11">swap(data[2], data[4]) &#x2192; swap(8, 4)</text>
+
+  <text x="40" y="348" fill="#888" font-size="11">Result:</text>
+  <rect x="110" y="334" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="131" y="352" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">1</text>
+  <rect x="158" y="334" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="179" y="352" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">2</text>
+  <rect x="206" y="334" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="227" y="352" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">4</text>
+  <rect x="254" y="334" width="42" height="26" rx="4" fill="#e67e22"/>
+  <text x="275" y="352" text-anchor="middle" fill="#fff" font-size="12">5</text>
+  <rect x="302" y="334" width="42" height="26" rx="4" fill="#e67e22"/>
+  <text x="323" y="352" text-anchor="middle" fill="#fff" font-size="12">8</text>
+  <text x="370" y="348" fill="#27ae60" font-size="11">&#x2190; 4 locked</text>
+
+  <!-- ===== PASS 4: i=3 ===== -->
+  <rect x="20" y="366" width="860" height="72" rx="8" fill="#fff" stroke="#27ae60" stroke-width="2"/>
+  <text x="40" y="388" fill="#e67e22" font-size="14" font-weight="bold">i = 3</text>
+  <text x="100" y="388" fill="#777" font-size="11">Scan indices 3&#x2013;4 for minimum (last pass)</text>
+
+  <text x="40" y="410" fill="#888" font-size="11">Scan:</text>
+  <text x="90" y="410" fill="#555" font-size="11"><tspan fill="#e74c3c" font-weight="bold">5</tspan>, 8</text>
+  <text x="220" y="410" fill="#e74c3c" font-size="11" font-weight="bold">min = 5 at index 3</text>
+  <text x="400" y="410" fill="#27ae60" font-size="11">Already in position &#x2192; no swap needed</text>
+
+  <text x="40" y="430" fill="#555" font-size="11" font-weight="bold">Final:</text>
+  <rect x="110" y="416" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="131" y="434" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">1</text>
+  <rect x="158" y="416" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="179" y="434" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">2</text>
+  <rect x="206" y="416" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="227" y="434" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">4</text>
+  <rect x="254" y="416" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="275" y="434" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">5</text>
+  <rect x="302" y="416" width="42" height="26" rx="4" fill="#27ae60" stroke="#1e8449" stroke-width="2"/>
+  <text x="323" y="434" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">8</text>
+  <text x="370" y="430" fill="#27ae60" font-size="11">&#x2190; all sorted!</text>
+
+  <!-- ===== KEY TAKEAWAYS ===== -->
+  <rect x="20" y="460" width="860" height="130" rx="10" fill="#fef9e7" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="450" y="484" text-anchor="middle" fill="#784212" font-size="15" font-weight="bold">Key Takeaways</text>
+
+  <text x="50" y="508" fill="#2c3e50" font-size="12">&#x2022; Each pass scans the entire unsorted region to find the minimum &#x2014; <tspan font-weight="bold">no shortcuts, always O(n&#xB2;)</tspan></text>
+  <text x="50" y="528" fill="#2c3e50" font-size="12">&#x2022; Only n&#x2212;1 total swaps (one per pass) &#x2014; <tspan font-weight="bold">fewest writes</tspan> of any quadratic sort</text>
+  <text x="50" y="548" fill="#2c3e50" font-size="12">&#x2022; <tspan font-weight="bold" fill="#e74c3c">Not stable:</tspan> swapping distant elements can reorder equals. Example: [3a, 3b, 1] &#x2192; [1, 3b, 3a]</text>
+  <text x="50" y="568" fill="#2c3e50" font-size="12">&#x2022; No best-case improvement &#x2014; even a fully sorted array requires scanning every unsorted element</text>
+  <text x="50" y="588" fill="#2c3e50" font-size="12">&#x2022; Useful when writes are expensive (e.g., flash memory) because it minimizes swaps</text>
+</svg>

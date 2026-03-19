@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" fill="#1a1a1a" font-size="24" font-weight="bold">The Three Quadratic Sorts</text>
+  <text x="450" y="54" text-anchor="middle" fill="#777" font-size="13">The most commonly taught O(n&#xB2;) sorting algorithms</text>
+
+  <!-- ========== WHY "QUADRATIC"? ========== -->
+  <rect x="20" y="72" width="860" height="100" rx="10" fill="#f8f9fa" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="450" y="96" text-anchor="middle" fill="#2c3e50" font-size="16" font-weight="bold">Why &#x201C;Quadratic&#x201D;?</text>
+
+  <text x="50" y="120" fill="#555" font-size="12.5">All three use <tspan font-weight="bold">nested loops</tspan>: for each element (outer loop), scan the remaining elements (inner loop).</text>
+  <text x="50" y="140" fill="#555" font-size="12.5">Outer runs ~n times &#xD7; inner runs ~n times = <tspan font-weight="bold" fill="#e74c3c">n &#xD7; n = n&#xB2;</tspan> total operations.</text>
+  <text x="50" y="160" fill="#555" font-size="12.5">When the input size <tspan font-weight="bold">doubles</tspan>, the runtime roughly <tspan font-weight="bold" fill="#e74c3c">quadruples</tspan> &#x2014; that&#x2019;s why we call them quadratic.</text>
+
+  <!-- ========== THE THREE SORTS ========== -->
+  <!-- Bubble Sort Card -->
+  <rect x="20" y="190" width="275" height="200" rx="10" fill="#fff" stroke="#3498db" stroke-width="2"/>
+  <rect x="20" y="190" width="275" height="36" rx="10" fill="#3498db"/>
+  <rect x="20" y="210" width="275" height="16" fill="#3498db"/>
+  <text x="157" y="214" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Bubble Sort</text>
+
+  <text x="40" y="250" fill="#2c3e50" font-size="12" font-weight="bold">Strategy:</text>
+  <text x="40" y="268" fill="#555" font-size="11.5">Compare adjacent pairs, swap if</text>
+  <text x="40" y="284" fill="#555" font-size="11.5">out of order. Largest &#x201C;bubbles&#x201D; to end.</text>
+
+  <text x="40" y="308" fill="#2c3e50" font-size="12" font-weight="bold">Best case:</text>
+  <text x="130" y="308" fill="#27ae60" font-size="12" font-weight="bold">O(n)</text>
+  <text x="165" y="308" fill="#777" font-size="11">(early exit)</text>
+
+  <text x="40" y="328" fill="#2c3e50" font-size="12" font-weight="bold">Stable:</text>
+  <text x="130" y="328" fill="#27ae60" font-size="12" font-weight="bold">Yes</text>
+
+  <text x="40" y="356" fill="#555" font-size="11" font-style="italic">Simple to understand but slow.</text>
+  <text x="40" y="372" fill="#555" font-size="11" font-style="italic">Mostly used for teaching.</text>
+
+  <!-- Insertion Sort Card -->
+  <rect x="312" y="190" width="275" height="200" rx="10" fill="#fff" stroke="#8e44ad" stroke-width="2"/>
+  <rect x="312" y="190" width="275" height="36" rx="10" fill="#8e44ad"/>
+  <rect x="312" y="210" width="275" height="16" fill="#8e44ad"/>
+  <text x="449" y="214" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Insertion Sort</text>
+
+  <text x="332" y="250" fill="#2c3e50" font-size="12" font-weight="bold">Strategy:</text>
+  <text x="332" y="268" fill="#555" font-size="11.5">Build a sorted region left-to-right.</text>
+  <text x="332" y="284" fill="#555" font-size="11.5">Slide each element into its correct spot.</text>
+
+  <text x="332" y="308" fill="#2c3e50" font-size="12" font-weight="bold">Best case:</text>
+  <text x="422" y="308" fill="#27ae60" font-size="12" font-weight="bold">O(n)</text>
+  <text x="457" y="308" fill="#777" font-size="11">(already sorted)</text>
+
+  <text x="332" y="328" fill="#2c3e50" font-size="12" font-weight="bold">Stable:</text>
+  <text x="422" y="328" fill="#27ae60" font-size="12" font-weight="bold">Yes</text>
+
+  <text x="332" y="356" fill="#555" font-size="11" font-style="italic">Fast on small or nearly-sorted data.</text>
+  <text x="332" y="372" fill="#555" font-size="11" font-style="italic">Used as base case in std::sort.</text>
+
+  <!-- Selection Sort Card -->
+  <rect x="604" y="190" width="276" height="200" rx="10" fill="#fff" stroke="#e67e22" stroke-width="2"/>
+  <rect x="604" y="190" width="276" height="36" rx="10" fill="#e67e22"/>
+  <rect x="604" y="210" width="276" height="16" fill="#e67e22"/>
+  <text x="742" y="214" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Selection Sort</text>
+
+  <text x="624" y="250" fill="#2c3e50" font-size="12" font-weight="bold">Strategy:</text>
+  <text x="624" y="268" fill="#555" font-size="11.5">Find the minimum in the unsorted</text>
+  <text x="624" y="284" fill="#555" font-size="11.5">region, swap it to the front.</text>
+
+  <text x="624" y="308" fill="#2c3e50" font-size="12" font-weight="bold">Best case:</text>
+  <text x="714" y="308" fill="#e74c3c" font-size="12" font-weight="bold">O(n&#xB2;)</text>
+  <text x="755" y="308" fill="#777" font-size="11">(no shortcut)</text>
+
+  <text x="624" y="328" fill="#2c3e50" font-size="12" font-weight="bold">Stable:</text>
+  <text x="714" y="328" fill="#e74c3c" font-size="12" font-weight="bold">No</text>
+
+  <text x="624" y="356" fill="#555" font-size="11" font-style="italic">Fewest swaps (n&#x2212;1 total).</text>
+  <text x="624" y="372" fill="#555" font-size="11" font-style="italic">Good when writes are expensive.</text>
+
+  <!-- ========== BOTTOM: WHY LEARN THESE? ========== -->
+  <rect x="20" y="406" width="860" height="64" rx="10" fill="#eaf2f8" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="450" y="430" text-anchor="middle" fill="#1a5276" font-size="14" font-weight="bold">Why learn O(n&#xB2;) sorts if faster ones exist?</text>
+  <text x="450" y="450" text-anchor="middle" fill="#555" font-size="12">They&#x2019;re simple to understand and implement &#x2022; Insertion sort is genuinely fast on small data</text>
+  <text x="450" y="466" text-anchor="middle" fill="#555" font-size="12">Real-world sort libraries (like std::sort) use insertion sort as a base case for n &#x2264; 16</text>
+</svg>

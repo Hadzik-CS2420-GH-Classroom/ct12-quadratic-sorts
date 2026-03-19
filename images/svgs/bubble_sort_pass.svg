@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/>
+  <!-- Title -->
+  <text x="430" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Bubble Sort -- One Pass</text>
+  <text x="430" y="50" text-anchor="middle" fill="#555" font-size="13">Compare adjacent pairs, swap if out of order. Largest element "bubbles" to the end.</text>
+
+  <!-- Initial array -->
+  <text x="40" y="85" fill="#888" font-size="12" font-weight="bold">Start:</text>
+  <rect x="100" y="68" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="130" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
+  <rect x="168" y="68" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="198" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
+  <rect x="236" y="68" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="266" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
+  <rect x="304" y="68" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="334" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">88</text>
+  <rect x="372" y="68" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="402" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
+
+  <!-- Step 1: compare 78, 95 -- no swap -->
+  <text x="40" y="138" fill="#888" font-size="11">Step 1:</text>
+  <rect x="100" y="120" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="130" y="143" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
+  <rect x="168" y="120" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="198" y="143" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
+  <rect x="236" y="120" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="266" y="143" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
+  <rect x="304" y="120" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="334" y="143" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">88</text>
+  <rect x="372" y="120" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="402" y="143" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
+  <text x="480" y="143" fill="#27ae60" font-size="12">78 &lt; 95 -- no swap</text>
+
+  <!-- Step 2: compare 95, 62 -- SWAP -->
+  <text x="40" y="190" fill="#888" font-size="11">Step 2:</text>
+  <rect x="100" y="172" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="130" y="195" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
+  <rect x="168" y="172" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="198" y="195" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
+  <rect x="236" y="172" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="266" y="195" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
+  <rect x="304" y="172" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="334" y="195" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">88</text>
+  <rect x="372" y="172" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="402" y="195" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
+  <text x="480" y="191" fill="#e74c3c" font-size="12" font-weight="bold">95 &gt; 62 -- SWAP!</text>
+
+  <!-- Step 3: compare 95, 88 -- SWAP -->
+  <text x="40" y="242" fill="#888" font-size="11">Step 3:</text>
+  <rect x="100" y="224" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="130" y="247" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
+  <rect x="168" y="224" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="198" y="247" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
+  <rect x="236" y="224" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="266" y="247" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">88</text>
+  <rect x="304" y="224" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="334" y="247" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
+  <rect x="372" y="224" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="402" y="247" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
+  <text x="480" y="243" fill="#e74c3c" font-size="12" font-weight="bold">95 &gt; 88 -- SWAP!</text>
+
+  <!-- Step 4: compare 95, 55 -- SWAP -->
+  <text x="40" y="294" fill="#888" font-size="11">Step 4:</text>
+  <rect x="100" y="276" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="130" y="299" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
+  <rect x="168" y="276" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="198" y="299" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
+  <rect x="236" y="276" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="266" y="299" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">88</text>
+  <rect x="304" y="276" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="334" y="299" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
+  <rect x="372" y="276" width="60" height="36" rx="4" fill="#f39c12" stroke="#e67e22" stroke-width="2.5"/>
+  <text x="402" y="299" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
+  <text x="480" y="291" fill="#e74c3c" font-size="12" font-weight="bold">95 &gt; 55 -- SWAP!</text>
+  <text x="480" y="306" fill="#f39c12" font-size="11">95 is now in its final position</text>
+
+  <!-- Footer -->
+  <rect x="30" y="325" width="800" height="44" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="430" y="345" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">After pass 1: the largest element (95) has bubbled to the end</text>
+  <text x="430" y="361" text-anchor="middle" fill="#555" font-size="12">Next pass only needs to compare positions 0-3 (last element is settled)</text>
+</svg>

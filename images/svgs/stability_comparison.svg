@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/>
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Stability -- Do Equal Elements Keep Their Order?</text>
+  <text x="400" y="50" text-anchor="middle" fill="#555" font-size="13">A stable sort preserves the original relative order of elements with equal keys</text>
+
+  <!-- Input array with subscripts -->
+  <text x="40" y="85" fill="#888" font-size="12" font-weight="bold">Input:</text>
+  <rect x="120" y="68" width="70" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="155" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3a</text>
+  <rect x="198" y="68" width="70" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="233" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3b</text>
+  <rect x="276" y="68" width="70" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="311" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">1</text>
+  <rect x="354" y="68" width="70" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="389" y="91" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">2</text>
+  <text x="480" y="88" fill="#888" font-size="12">3a and 3b have the same value (3)</text>
+
+  <!-- Stable result -->
+  <rect x="40" y="120" width="720" height="80" rx="8" fill="#e8f5e9" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="400" y="142" text-anchor="middle" fill="#1b5e20" font-size="14" font-weight="bold">Stable sort (bubble, insertion): 3a stays before 3b</text>
+  <rect x="120" y="152" width="70" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="155" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">1</text>
+  <rect x="198" y="152" width="70" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="233" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">2</text>
+  <rect x="276" y="152" width="70" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="311" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3a</text>
+  <rect x="354" y="152" width="70" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="389" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3b</text>
+  <text x="480" y="175" fill="#27ae60" font-size="13" font-weight="bold">Original order preserved</text>
+
+  <!-- Unstable result -->
+  <rect x="40" y="210" width="720" height="80" rx="8" fill="#fce4ec" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="400" y="232" text-anchor="middle" fill="#b71c1c" font-size="14" font-weight="bold">Unstable sort (selection): 3a and 3b may swap</text>
+  <rect x="120" y="242" width="70" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="155" y="265" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">1</text>
+  <rect x="198" y="242" width="70" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="233" y="265" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">2</text>
+  <rect x="276" y="242" width="70" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="311" y="265" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3b</text>
+  <rect x="354" y="242" width="70" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="389" y="265" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3a</text>
+  <text x="480" y="265" fill="#e74c3c" font-size="13" font-weight="bold">Order reversed!</text>
+
+  <!-- Why it matters -->
+  <text x="400" y="310" text-anchor="middle" fill="#666" font-size="12" font-style="italic">Stability matters when sorting objects by one field -- a stable sort won't scramble other fields</text>
+</svg>

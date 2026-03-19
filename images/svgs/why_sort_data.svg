@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="34" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Why Sort Data?</text>
+  <text x="450" y="58" text-anchor="middle" fill="#777" font-size="14">Sorting transforms a chaotic collection into something you can work with efficiently</text>
+
+  <!-- ========== UNSORTED vs SORTED ========== -->
+  <rect x="40" y="80" width="380" height="100" rx="10" fill="#fdedec" stroke="#e74c3c" stroke-width="2"/>
+  <text x="230" y="104" text-anchor="middle" fill="#922b21" font-size="14" font-weight="bold">Unsorted Data</text>
+  <!-- Scattered boxes -->
+  <rect x="65" y="116" width="38" height="28" rx="4" fill="#fadbd8" stroke="#e74c3c" stroke-width="1"/>
+  <text x="84" y="135" text-anchor="middle" fill="#922b21" font-size="13" font-weight="bold">42</text>
+  <rect x="110" y="116" width="38" height="28" rx="4" fill="#fadbd8" stroke="#e74c3c" stroke-width="1"/>
+  <text x="129" y="135" text-anchor="middle" fill="#922b21" font-size="13" font-weight="bold">7</text>
+  <rect x="155" y="116" width="38" height="28" rx="4" fill="#fadbd8" stroke="#e74c3c" stroke-width="1"/>
+  <text x="174" y="135" text-anchor="middle" fill="#922b21" font-size="13" font-weight="bold">91</text>
+  <rect x="200" y="116" width="38" height="28" rx="4" fill="#fadbd8" stroke="#e74c3c" stroke-width="1"/>
+  <text x="219" y="135" text-anchor="middle" fill="#922b21" font-size="13" font-weight="bold">3</text>
+  <rect x="245" y="116" width="38" height="28" rx="4" fill="#fadbd8" stroke="#e74c3c" stroke-width="1"/>
+  <text x="264" y="135" text-anchor="middle" fill="#922b21" font-size="13" font-weight="bold">58</text>
+  <rect x="290" y="116" width="38" height="28" rx="4" fill="#fadbd8" stroke="#e74c3c" stroke-width="1"/>
+  <text x="309" y="135" text-anchor="middle" fill="#922b21" font-size="13" font-weight="bold">15</text>
+  <rect x="335" y="116" width="38" height="28" rx="4" fill="#fadbd8" stroke="#e74c3c" stroke-width="1"/>
+  <text x="354" y="135" text-anchor="middle" fill="#922b21" font-size="13" font-weight="bold">23</text>
+  <text x="230" y="165" text-anchor="middle" fill="#c0392b" font-size="12">Finding anything requires checking every element &#x2014; O(n)</text>
+
+  <!-- Arrow -->
+  <text x="445" y="135" text-anchor="middle" fill="#27ae60" font-size="28" font-weight="bold">&#x2192;</text>
+
+  <!-- Sorted -->
+  <rect x="480" y="80" width="380" height="100" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+  <text x="670" y="104" text-anchor="middle" fill="#1a5e32" font-size="14" font-weight="bold">Sorted Data</text>
+  <rect x="505" y="116" width="38" height="28" rx="4" fill="#d5f5e3" stroke="#27ae60" stroke-width="1"/>
+  <text x="524" y="135" text-anchor="middle" fill="#1a5e32" font-size="13" font-weight="bold">3</text>
+  <rect x="550" y="116" width="38" height="28" rx="4" fill="#d5f5e3" stroke="#27ae60" stroke-width="1"/>
+  <text x="569" y="135" text-anchor="middle" fill="#1a5e32" font-size="13" font-weight="bold">7</text>
+  <rect x="595" y="116" width="38" height="28" rx="4" fill="#d5f5e3" stroke="#27ae60" stroke-width="1"/>
+  <text x="614" y="135" text-anchor="middle" fill="#1a5e32" font-size="13" font-weight="bold">15</text>
+  <rect x="640" y="116" width="38" height="28" rx="4" fill="#d5f5e3" stroke="#27ae60" stroke-width="1"/>
+  <text x="659" y="135" text-anchor="middle" fill="#1a5e32" font-size="13" font-weight="bold">23</text>
+  <rect x="685" y="116" width="38" height="28" rx="4" fill="#d5f5e3" stroke="#27ae60" stroke-width="1"/>
+  <text x="704" y="135" text-anchor="middle" fill="#1a5e32" font-size="13" font-weight="bold">42</text>
+  <rect x="730" y="116" width="38" height="28" rx="4" fill="#d5f5e3" stroke="#27ae60" stroke-width="1"/>
+  <text x="749" y="135" text-anchor="middle" fill="#1a5e32" font-size="13" font-weight="bold">58</text>
+  <rect x="775" y="116" width="38" height="28" rx="4" fill="#d5f5e3" stroke="#27ae60" stroke-width="1"/>
+  <text x="794" y="135" text-anchor="middle" fill="#1a5e32" font-size="13" font-weight="bold">91</text>
+  <text x="670" y="165" text-anchor="middle" fill="#1e8449" font-size="12">Structure unlocks fast algorithms &#x2014; O(log n) search</text>
+
+  <!-- ========== WHAT SORTING ENABLES ========== -->
+  <text x="450" y="216" text-anchor="middle" fill="#2c3e50" font-size="18" font-weight="bold">What Sorting Enables</text>
+
+  <!-- Card 1: Binary Search -->
+  <rect x="40" y="234" width="195" height="120" rx="10" fill="#eaf2f8" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="137" y="260" text-anchor="middle" fill="#2980b9" font-size="28">&#x1F50D;</text>
+  <text x="137" y="282" text-anchor="middle" fill="#1a5276" font-size="13" font-weight="bold">Binary Search</text>
+  <text x="137" y="300" text-anchor="middle" fill="#555" font-size="11">Cut the search space in half</text>
+  <text x="137" y="316" text-anchor="middle" fill="#555" font-size="11">each step: O(log n) vs O(n)</text>
+  <text x="137" y="338" text-anchor="middle" fill="#2980b9" font-size="11" font-weight="bold">Requires sorted data</text>
+
+  <!-- Card 2: Duplicates -->
+  <rect x="255" y="234" width="195" height="120" rx="10" fill="#fef9e7" stroke="#f39c12" stroke-width="1.5"/>
+  <text x="352" y="260" text-anchor="middle" fill="#f39c12" font-size="28">&#x1F501;</text>
+  <text x="352" y="282" text-anchor="middle" fill="#7d6608" font-size="13" font-weight="bold">Find Duplicates</text>
+  <text x="352" y="300" text-anchor="middle" fill="#555" font-size="11">Duplicates become neighbors</text>
+  <text x="352" y="316" text-anchor="middle" fill="#555" font-size="11">in sorted order: one pass O(n)</text>
+  <text x="352" y="338" text-anchor="middle" fill="#f39c12" font-size="11" font-weight="bold">vs O(n&#xB2;) brute force</text>
+
+  <!-- Card 3: Min/Max/Median -->
+  <rect x="470" y="234" width="195" height="120" rx="10" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.5"/>
+  <text x="567" y="260" text-anchor="middle" fill="#8e44ad" font-size="28">&#x1F4CA;</text>
+  <text x="567" y="282" text-anchor="middle" fill="#4a235a" font-size="13" font-weight="bold">Min / Max / Median</text>
+  <text x="567" y="300" text-anchor="middle" fill="#555" font-size="11">First element = min</text>
+  <text x="567" y="316" text-anchor="middle" fill="#555" font-size="11">Last = max, middle = median</text>
+  <text x="567" y="338" text-anchor="middle" fill="#8e44ad" font-size="11" font-weight="bold">All O(1) after sorting</text>
+
+  <!-- Card 4: Display -->
+  <rect x="685" y="234" width="175" height="120" rx="10" fill="#eafaf1" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="772" y="260" text-anchor="middle" fill="#27ae60" font-size="28">&#x1F4CB;</text>
+  <text x="772" y="282" text-anchor="middle" fill="#1a5e32" font-size="13" font-weight="bold">Display &#x0026; Reports</text>
+  <text x="772" y="300" text-anchor="middle" fill="#555" font-size="11">Leaderboards, directories,</text>
+  <text x="772" y="316" text-anchor="middle" fill="#555" font-size="11">search results, grade sheets</text>
+  <text x="772" y="338" text-anchor="middle" fill="#27ae60" font-size="11" font-weight="bold">Users expect sorted output</text>
+
+  <!-- ========== REAL WORLD EXAMPLES ========== -->
+  <text x="450" y="390" text-anchor="middle" fill="#2c3e50" font-size="18" font-weight="bold">Sorting Is Everywhere</text>
+
+  <rect x="20" y="406" width="860" height="95" rx="10" fill="#f8f9fa" stroke="#bdc3c7" stroke-width="1.5"/>
+
+  <!-- Row of examples — 5 evenly spaced columns across 860px (x=20..880) -->
+  <text x="106" y="432" text-anchor="middle" fill="#2c3e50" font-size="13" font-weight="bold">&#x1F3AE; Game</text>
+  <text x="106" y="450" text-anchor="middle" fill="#555" font-size="11">High scores sorted</text>
+  <text x="106" y="466" text-anchor="middle" fill="#555" font-size="11">by rank</text>
+
+  <line x1="192" y1="416" x2="192" y2="490" stroke="#ddd" stroke-width="1"/>
+
+  <text x="278" y="432" text-anchor="middle" fill="#2c3e50" font-size="13" font-weight="bold">&#x1F4E7; Email</text>
+  <text x="278" y="450" text-anchor="middle" fill="#555" font-size="11">Inbox sorted by</text>
+  <text x="278" y="466" text-anchor="middle" fill="#555" font-size="11">date or sender</text>
+
+  <line x1="364" y1="416" x2="364" y2="490" stroke="#ddd" stroke-width="1"/>
+
+  <text x="450" y="432" text-anchor="middle" fill="#2c3e50" font-size="13" font-weight="bold">&#x1F6D2; Shopping</text>
+  <text x="450" y="450" text-anchor="middle" fill="#555" font-size="11">Products sorted by</text>
+  <text x="450" y="466" text-anchor="middle" fill="#555" font-size="11">price, rating, relevance</text>
+
+  <line x1="536" y1="416" x2="536" y2="490" stroke="#ddd" stroke-width="1"/>
+
+  <text x="622" y="432" text-anchor="middle" fill="#2c3e50" font-size="13" font-weight="bold">&#x1F4BB; OS</text>
+  <text x="622" y="450" text-anchor="middle" fill="#555" font-size="11">Files sorted by name,</text>
+  <text x="622" y="466" text-anchor="middle" fill="#555" font-size="11">size, or date modified</text>
+
+  <line x1="708" y1="416" x2="708" y2="490" stroke="#ddd" stroke-width="1"/>
+
+  <text x="794" y="432" text-anchor="middle" fill="#2c3e50" font-size="13" font-weight="bold">&#x1F3EB; School</text>
+  <text x="794" y="450" text-anchor="middle" fill="#555" font-size="11">Grades sorted for</text>
+  <text x="794" y="466" text-anchor="middle" fill="#555" font-size="11">curves and GPA</text>
+</svg>
