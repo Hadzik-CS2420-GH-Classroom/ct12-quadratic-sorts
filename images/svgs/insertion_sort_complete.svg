@@ -64,7 +64,7 @@
   <!-- Step 2: j=0 -->
   <text x="40" y="316" fill="#8e44ad" font-size="12" font-weight="bold">j = 0</text>
   <text x="85" y="316" fill="#888" font-size="11">5 &gt; key(2)?</text>
-  <text x="430" y="316" fill="#e74c3c" font-size="12" font-weight="bold">Yes &#x2192; shift 5 right into the gap</text>
+  <text x="270" y="316" fill="#e74c3c" font-size="12" font-weight="bold">Yes &#x2192; shift 5 right into the gap</text>
 
   <!-- Key still in temp — full size, above the empty slot -->
   <rect x="211" y="308" width="46" height="28" rx="4" fill="#8e44ad" stroke="#6c3483" stroke-width="2"/>
@@ -185,7 +185,7 @@
   <!-- j=1: 5 > 8? No -->
   <text x="40" y="664.0" fill="#8e44ad" font-size="12" font-weight="bold">j = 1</text>
   <text x="85" y="664.0" fill="#888" font-size="11">5 &gt; key(8)?</text>
-  <text x="200" y="664.0" fill="#f39c12" font-size="12" font-weight="bold">No &#x2192; stop! 8 is already in the right spot</text>
+  <text x="255" y="664.0" fill="#f39c12" font-size="12" font-weight="bold">No &#x2192; stop! 8 is already in the right spot</text>
 
   <!-- Key still in temp — full size, above empty slot at x=196 -->
   <rect x="196" y="656.0" width="42" height="26" rx="4" fill="#8e44ad" stroke="#6c3483" stroke-width="2"/>
