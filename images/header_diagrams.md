@@ -48,6 +48,8 @@ Conceptual diagrams referenced from `QuadraticSorts.h`.
 
 ![Selection Sort -- Complete Walkthrough](svgs/selection_sort_complete.svg)
 
+[Interactive demo: Selection Sort in action (W3Schools)](https://www.w3schools.com/dsa/dsa_algo_selectionsort.php)
+
 ---
 
 ## 7. Stability -- Do Equal Elements Keep Their Order?
