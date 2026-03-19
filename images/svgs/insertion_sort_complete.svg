@@ -66,6 +66,11 @@
   <text x="85" y="316" fill="#888" font-size="11">5 &gt; key(2)?</text>
   <text x="200" y="316" fill="#e74c3c" font-size="12" font-weight="bold">Yes &#x2192; shift 5 right into the gap</text>
 
+  <!-- Key still in temp -->
+  <rect x="155" y="306" width="30" height="18" rx="3" fill="#8e44ad" opacity="0.7"/>
+  <text x="170" y="319" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">2</text>
+  <text x="190" y="318" fill="#8e44ad" font-size="8">key</text>
+
   <!-- Before shift -->
   <rect x="155" y="328" width="46" height="28" rx="4" fill="#e74c3c"/>
   <text x="178" y="347" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">5</text>
@@ -99,6 +104,11 @@
   <!-- Step 3: j=-1 — band from y=372 to y=440 (center ~406) -->
   <text x="40" y="390" fill="#8e44ad" font-size="12" font-weight="bold">j = -1</text>
   <text x="85" y="390" fill="#888" font-size="11">Stop! Place key in the gap</text>
+
+  <!-- Key still in temp -->
+  <rect x="155" y="378" width="30" height="18" rx="3" fill="#8e44ad" opacity="0.7"/>
+  <text x="170" y="391" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">2</text>
+  <text x="190" y="390" fill="#8e44ad" font-size="8">key</text>
 
   <!-- Before: gap at index 0 -->
   <rect x="155" y="400" width="46" height="28" rx="4" fill="#ecf0f1" stroke="#8e44ad" stroke-width="1.5" stroke-dasharray="4,3"/>
@@ -178,6 +188,11 @@
   <text x="40" y="644" fill="#8e44ad" font-size="12" font-weight="bold">j = 1</text>
   <text x="85" y="644" fill="#888" font-size="11">5 &gt; key(8)?</text>
   <text x="200" y="644" fill="#f39c12" font-size="12" font-weight="bold">No &#x2192; stop! 8 is already in the right spot</text>
+
+  <!-- Key still in temp -->
+  <rect x="100" y="636" width="30" height="18" rx="3" fill="#8e44ad" opacity="0.7"/>
+  <text x="115" y="649" text-anchor="middle" fill="#fff" font-size="9" font-weight="bold">8</text>
+  <text x="135" y="648" fill="#8e44ad" font-size="8">key</text>
 
   <rect x="100" y="656" width="42" height="26" rx="4" fill="#2ecc71"/>
   <text x="121" y="674" text-anchor="middle" fill="#fff" font-size="12">2</text>
