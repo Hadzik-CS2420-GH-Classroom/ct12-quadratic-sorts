@@ -16,7 +16,8 @@
 // Key design decisions:
 //   - Standalone functions (not inside a class) -- call bubble_sort(data) directly
 //   - Take std::vector<int>& by reference -- sorts the original vector in-place
-//   - Ascending order, O(1) extra space
+//   - Ascending order (smallest first)
+//   - O(1) extra space -- only a few temp variables, no extra arrays needed
 //
 
 // ---------------------------------------------------------------------------
