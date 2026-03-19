@@ -39,6 +39,8 @@ Conceptual diagrams referenced from `QuadraticSorts.h`.
 
 ![Insertion Sort -- Complete Walkthrough](svgs/insertion_sort_complete.svg)
 
+[Interactive demo: Insertion Sort in action (W3Schools)](https://www.w3schools.com/dsa/dsa_algo_insertionsort.php)
+
 ---
 
 ## 6. Selection Sort -- Complete Walkthrough
