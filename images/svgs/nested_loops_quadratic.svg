@@ -1,37 +1,238 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="'Segoe UI', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="'Segoe UI', Arial, sans-serif">
   <rect width="100%" height="100%" fill="white"/>
-  <!-- Title -->
-  <text x="400" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Why Nested Loops = O(n^2)</text>
-  <text x="400" y="50" text-anchor="middle" fill="#555" font-size="13">Each element in the outer loop triggers a scan of the remaining elements</text>
 
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" fill="#1a1a1a" font-size="24" font-weight="bold">Why Nested Loops = O(n&#xB2;)</text>
+  <text x="450" y="52" text-anchor="middle" fill="#777" font-size="13">Each element in the outer loop triggers a scan of the remaining elements</text>
+
+  <!-- ===== LEFT: Code + Math ===== -->
   <!-- Code block -->
-  <rect x="40" y="66" width="340" height="140" rx="8" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5"/>
-  <text x="60" y="90" fill="#cba6f7" font-size="13" font-family="Consolas, monospace">for</text>
-  <text x="88" y="90" fill="#cdd6f4" font-size="13" font-family="Consolas, monospace">(i = 0; i &lt; n; i++)</text>
-  <text x="70" y="110" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// outer: n iterations</text>
-  <text x="70" y="134" fill="#cba6f7" font-size="13" font-family="Consolas, monospace">for</text>
-  <text x="98" y="134" fill="#cdd6f4" font-size="13" font-family="Consolas, monospace">(j = i+1; j &lt; n; j++)</text>
-  <text x="80" y="154" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// inner: ~n iterations</text>
-  <text x="80" y="178" fill="#a6e3a1" font-size="13" font-family="Consolas, monospace">compare &amp; maybe swap</text>
+  <rect x="20" y="70" width="380" height="140" rx="8" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5"/>
+  <text x="40" y="96" fill="#cba6f7" font-size="13" font-family="Consolas, monospace">for</text>
+  <text x="68" y="96" fill="#cdd6f4" font-size="13" font-family="Consolas, monospace">(i = 0; i &lt; n; i++)</text>
+  <text x="50" y="116" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// outer: n iterations</text>
+  <text x="50" y="140" fill="#cba6f7" font-size="13" font-family="Consolas, monospace">  for</text>
+  <text x="88" y="140" fill="#cdd6f4" font-size="13" font-family="Consolas, monospace">(j = i+1; j &lt; n; j++)</text>
+  <text x="60" y="160" fill="#6c7086" font-size="12" font-family="Consolas, monospace">  // inner: ~n iterations</text>
+  <text x="60" y="184" fill="#a6e3a1" font-size="13" font-family="Consolas, monospace">    compare &amp; maybe swap</text>
 
   <!-- Math breakdown -->
-  <rect x="420" y="66" width="340" height="140" rx="8" fill="#f4f6f7" stroke="#bdc3c7" stroke-width="1.5"/>
-  <text x="590" y="90" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">Total comparisons:</text>
-  <text x="590" y="116" text-anchor="middle" fill="#555" font-size="13">(n-1) + (n-2) + ... + 2 + 1</text>
-  <text x="590" y="140" text-anchor="middle" fill="#555" font-size="13">= n(n-1) / 2</text>
-  <text x="590" y="168" text-anchor="middle" fill="#e74c3c" font-size="16" font-weight="bold">= O(n^2)</text>
-  <text x="590" y="192" text-anchor="middle" fill="#888" font-size="12">When n doubles, work quadruples</text>
+  <rect x="20" y="220" width="380" height="110" rx="8" fill="#f4f6f7" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="210" y="246" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">Total comparisons:</text>
+  <text x="210" y="270" text-anchor="middle" fill="#555" font-size="13">(n&#x2212;1) + (n&#x2212;2) + ... + 2 + 1</text>
+  <text x="210" y="294" text-anchor="middle" fill="#555" font-size="13">= n(n&#x2212;1) / 2</text>
+  <text x="210" y="320" text-anchor="middle" fill="#e74c3c" font-size="16" font-weight="bold">= O(n&#xB2;)</text>
 
-  <!-- Growth examples -->
-  <rect x="40" y="220" width="720" height="68" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
-  <text x="400" y="242" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">Growth in action:</text>
-  <text x="140" y="264" text-anchor="middle" fill="#3498db" font-size="13">n = 1,000</text>
-  <text x="140" y="280" text-anchor="middle" fill="#3498db" font-size="12">~500,000 ops</text>
-  <text x="300" y="264" text-anchor="middle" fill="#e67e22" font-size="13">n = 2,000</text>
-  <text x="300" y="280" text-anchor="middle" fill="#e67e22" font-size="12">~2,000,000 ops</text>
-  <text x="300" y="264" text-anchor="middle" fill="#e67e22" font-size="13">n = 2,000</text>
-  <text x="460" y="264" text-anchor="middle" fill="#e74c3c" font-size="13">n = 10,000</text>
-  <text x="460" y="280" text-anchor="middle" fill="#e74c3c" font-size="12">~50,000,000 ops</text>
-  <text x="640" y="264" text-anchor="middle" fill="#8e44ad" font-size="13">n = 100,000</text>
-  <text x="640" y="280" text-anchor="middle" fill="#8e44ad" font-size="12">~5,000,000,000 ops</text>
+  <!-- ===== RIGHT: Growth Curve Graph ===== -->
+  <rect x="430" y="70" width="450" height="330" rx="8" fill="#f8f9fa" stroke="#ddd" stroke-width="1.5"/>
+  <text x="655" y="94" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">O(n&#xB2;) Growth Curve</text>
+
+  <!-- Axes -->
+  <!-- Y axis -->
+  <line x1="500" y1="110" x2="500" y2="370" stroke="#555" stroke-width="1.5"/>
+  <!-- X axis -->
+  <line x1="500" y1="370" x2="850" y2="370" stroke="#555" stroke-width="1.5"/>
+  <!-- Y label -->
+  <text x="460" y="240" text-anchor="middle" fill="#555" font-size="11" transform="rotate(-90, 460, 240)">Operations</text>
+  <!-- X label -->
+  <text x="675" y="395" text-anchor="middle" fill="#555" font-size="11">Input size (n)</text>
+
+  <!-- Y axis ticks and labels -->
+  <!-- Scale: x maps n=0..100 to px 500..840, y maps ops=0..10000 to px 370..120 -->
+  <line x1="495" y1="370" x2="500" y2="370" stroke="#555" stroke-width="1"/>
+  <text x="490" y="374" text-anchor="end" fill="#888" font-size="10">0</text>
+
+  <line x1="495" y1="307.5" x2="500" y2="307.5" stroke="#ddd" stroke-width="1"/>
+  <text x="490" y="311" text-anchor="end" fill="#888" font-size="10">2,500</text>
+  <line x1="500" y1="307.5" x2="840" y2="307.5" stroke="#eee" stroke-width="1"/>
+
+  <line x1="495" y1="245" x2="500" y2="245" stroke="#ddd" stroke-width="1"/>
+  <text x="490" y="249" text-anchor="end" fill="#888" font-size="10">5,000</text>
+  <line x1="500" y1="245" x2="840" y2="245" stroke="#eee" stroke-width="1"/>
+
+  <line x1="495" y1="182.5" x2="500" y2="182.5" stroke="#ddd" stroke-width="1"/>
+  <text x="490" y="186" text-anchor="end" fill="#888" font-size="10">7,500</text>
+  <line x1="500" y1="182.5" x2="840" y2="182.5" stroke="#eee" stroke-width="1"/>
+
+  <line x1="495" y1="120" x2="500" y2="120" stroke="#ddd" stroke-width="1"/>
+  <text x="490" y="124" text-anchor="end" fill="#888" font-size="10">10,000</text>
+  <line x1="500" y1="120" x2="840" y2="120" stroke="#eee" stroke-width="1"/>
+
+  <!-- X axis ticks -->
+  <line x1="568" y1="370" x2="568" y2="375" stroke="#555" stroke-width="1"/>
+  <text x="568" y="386" text-anchor="middle" fill="#888" font-size="10">20</text>
+
+  <line x1="636" y1="370" x2="636" y2="375" stroke="#555" stroke-width="1"/>
+  <text x="636" y="386" text-anchor="middle" fill="#888" font-size="10">40</text>
+
+  <line x1="704" y1="370" x2="704" y2="375" stroke="#555" stroke-width="1"/>
+  <text x="704" y="386" text-anchor="middle" fill="#888" font-size="10">60</text>
+
+  <line x1="772" y1="370" x2="772" y2="375" stroke="#555" stroke-width="1"/>
+  <text x="772" y="386" text-anchor="middle" fill="#888" font-size="10">80</text>
+
+  <line x1="840" y1="370" x2="840" y2="375" stroke="#555" stroke-width="1"/>
+  <text x="840" y="386" text-anchor="middle" fill="#888" font-size="10">100</text>
+
+  <!-- O(n^2) curve: n^2 where n goes 0..100, ops 0..10000 -->
+  <!-- x = 500 + n*3.4,  y = 370 - (n^2 * 0.025) -->
+  <polyline fill="none" stroke="#e74c3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+    points="
+      500,370
+      503.4,369.975
+      506.8,369.9
+      510.2,369.775
+      513.6,369.6
+      517,369.375
+      520.4,369.1
+      523.8,368.775
+      527.2,368.4
+      530.6,367.975
+      534,367.5
+      537.4,366.975
+      540.8,366.4
+      544.2,365.775
+      547.6,365.1
+      551,364.375
+      554.4,363.6
+      557.8,362.775
+      561.2,361.9
+      564.6,360.975
+      568,360
+      571.4,358.975
+      574.8,357.9
+      578.2,356.775
+      581.6,355.6
+      585,354.375
+      588.4,353.1
+      591.8,351.775
+      595.2,350.4
+      598.6,348.975
+      602,347.5
+      605.4,345.975
+      608.8,344.4
+      612.2,342.775
+      615.6,341.1
+      619,339.375
+      622.4,337.6
+      625.8,335.775
+      629.2,333.9
+      632.6,331.975
+      636,330
+      639.4,327.975
+      642.8,325.9
+      646.2,323.775
+      649.6,321.6
+      653,319.375
+      656.4,317.1
+      659.8,314.775
+      663.2,312.4
+      666.6,309.975
+      670,307.5
+      673.4,304.975
+      676.8,302.4
+      680.2,299.775
+      683.6,297.1
+      687,294.375
+      690.4,291.6
+      693.8,288.775
+      697.2,285.9
+      700.6,282.975
+      704,280
+      707.4,276.975
+      710.8,273.9
+      714.2,270.775
+      717.6,267.6
+      721,264.375
+      724.4,261.1
+      727.8,257.775
+      731.2,254.4
+      734.6,250.975
+      738,247.5
+      741.4,243.975
+      744.8,240.4
+      748.2,236.775
+      751.6,233.1
+      755,229.375
+      758.4,225.6
+      761.8,221.775
+      765.2,217.9
+      768.6,213.975
+      772,210
+      775.4,205.975
+      778.8,201.9
+      782.2,197.775
+      785.6,193.6
+      789,189.375
+      792.4,185.1
+      795.8,180.775
+      799.2,176.4
+      802.6,171.975
+      806,167.5
+      809.4,162.975
+      812.8,158.4
+      816.2,153.775
+      819.6,149.1
+      823,144.375
+      826.4,139.6
+      829.8,134.775
+      833.2,129.9
+      836.6,124.975
+      840,120
+    "/>
+
+  <!-- Data point dots with labels -->
+  <!-- n=20: 400 ops -->
+  <circle cx="568" cy="360" r="4" fill="#3498db"/>
+  <text x="568" y="354" text-anchor="middle" fill="#3498db" font-size="9" font-weight="bold">400</text>
+
+  <!-- n=40: 1600 ops -->
+  <circle cx="636" cy="330" r="4" fill="#e67e22"/>
+  <text x="636" y="324" text-anchor="middle" fill="#e67e22" font-size="9" font-weight="bold">1,600</text>
+
+  <!-- n=60: 3600 ops -->
+  <circle cx="704" cy="280" r="4" fill="#e67e22"/>
+  <text x="704" y="274" text-anchor="middle" fill="#e67e22" font-size="9" font-weight="bold">3,600</text>
+
+  <!-- n=80: 6400 ops -->
+  <circle cx="772" cy="210" r="4" fill="#e74c3c"/>
+  <text x="772" y="204" text-anchor="middle" fill="#e74c3c" font-size="9" font-weight="bold">6,400</text>
+
+  <!-- n=100: 10000 ops -->
+  <circle cx="840" cy="120" r="4" fill="#e74c3c"/>
+  <text x="828" y="114" text-anchor="end" fill="#e74c3c" font-size="9" font-weight="bold">10,000</text>
+
+  <!-- "quadruples" annotation -->
+  <line x1="570" y1="360" x2="636" y2="330" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="603" y="340" text-anchor="middle" fill="#888" font-size="9">&#xD7;4</text>
+  <line x1="636" y1="330" x2="704" y2="280" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- ===== BOTTOM: Growth Table ===== -->
+  <rect x="20" y="350" width="380" height="80" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="210" y="372" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">When n doubles, work quadruples:</text>
+
+  <text x="50" y="396" fill="#3498db" font-size="12">n = 10</text>
+  <text x="50" y="414" fill="#3498db" font-size="11">100 ops</text>
+
+  <text x="135" y="396" fill="#e67e22" font-size="12">n = 20</text>
+  <text x="135" y="414" fill="#e67e22" font-size="11">400 ops</text>
+  <text x="125" y="406" fill="#888" font-size="9">&#xD7;4</text>
+
+  <text x="225" y="396" fill="#e67e22" font-size="12">n = 40</text>
+  <text x="225" y="414" fill="#e67e22" font-size="11">1,600 ops</text>
+  <text x="215" y="406" fill="#888" font-size="9">&#xD7;4</text>
+
+  <text x="315" y="396" fill="#e74c3c" font-size="12">n = 80</text>
+  <text x="315" y="414" fill="#e74c3c" font-size="11">6,400 ops</text>
+  <text x="305" y="406" fill="#888" font-size="9">&#xD7;4</text>
+
+  <!-- ===== BOTTOM: Key insight ===== -->
+  <rect x="20" y="444" width="860" height="50" rx="8" fill="#fdedec" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="450" y="468" text-anchor="middle" fill="#922b21" font-size="13" font-weight="bold">This is why O(n&#xB2;) sorts become unusable on large data.</text>
+  <text x="450" y="486" text-anchor="middle" fill="#922b21" font-size="12">At n = 1,000,000 that&#x2019;s 1,000,000,000,000 operations &#x2014; even fast CPUs would take hours.</text>
+
+  <!-- ===== BONUS: Compare to O(n) ===== -->
+  <rect x="20" y="506" width="860" height="44" rx="8" fill="#eafaf1" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="450" y="524" text-anchor="middle" fill="#1a5e32" font-size="12">Compare: an O(n) algorithm on n = 1,000,000 does just 1,000,000 operations.</text>
+  <text x="450" y="542" text-anchor="middle" fill="#1a5e32" font-size="12">O(n&#xB2;) does <tspan font-weight="bold">1 million times more work</tspan> than O(n) at that scale.</text>
 </svg>
