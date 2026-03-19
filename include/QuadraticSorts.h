@@ -9,6 +9,7 @@
 //
 // ? SEE DIAGRAM: images/svgs/why_sort_data.svg -- why sorting matters, what it enables
 // ? SEE DIAGRAM: images/svgs/quadratic_sorts_overview.svg -- the three quadratic sorts at a glance
+// ? SEE DIAGRAM: images/svgs/nested_loops_quadratic.svg -- nested loops, math, and O(n²) growth curve
 //
 // ! DISCUSSION: Why "quadratic"?
 //   - Nested loops: n × n = n² -- when n doubles, runtime quadruples
