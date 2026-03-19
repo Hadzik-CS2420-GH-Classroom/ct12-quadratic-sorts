@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" fill="#1a1a1a" font-size="24" font-weight="bold">When to Use Which Sort?</text>
+  <text x="450" y="54" text-anchor="middle" fill="#777" font-size="13">All three are O(n&#xB2;) &#x2014; but each has a scenario where it shines</text>
+
+  <!-- ===== BUBBLE SORT ===== -->
+  <rect x="20" y="74" width="860" height="110" rx="10" fill="#fff" stroke="#3498db" stroke-width="2"/>
+  <rect x="20" y="74" width="860" height="32" rx="10" fill="#3498db"/>
+  <rect x="20" y="90" width="860" height="16" fill="#3498db"/>
+  <text x="450" y="96" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Bubble Sort</text>
+
+  <text x="40" y="126" fill="#2c3e50" font-size="12" font-weight="bold">Best for:</text>
+  <text x="120" y="126" fill="#555" font-size="12">Teaching and learning &#x2014; simplest sort to understand and implement</text>
+
+  <text x="40" y="148" fill="#2c3e50" font-size="12" font-weight="bold">Use when:</text>
+  <text x="120" y="148" fill="#555" font-size="12">You need a quick, throwaway sort for a tiny dataset and don&#x2019;t care about performance</text>
+
+  <text x="40" y="170" fill="#2c3e50" font-size="12" font-weight="bold">Advantage:</text>
+  <text x="120" y="170" fill="#27ae60" font-size="12">Early exit &#x2014; if data is already sorted (or nearly sorted), it finishes in O(n)</text>
+
+  <!-- ===== INSERTION SORT ===== -->
+  <rect x="20" y="194" width="860" height="130" rx="10" fill="#fff" stroke="#8e44ad" stroke-width="2"/>
+  <rect x="20" y="194" width="860" height="32" rx="10" fill="#8e44ad"/>
+  <rect x="20" y="210" width="860" height="16" fill="#8e44ad"/>
+  <text x="450" y="216" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Insertion Sort &#x2190; the practical winner</text>
+
+  <text x="40" y="248" fill="#2c3e50" font-size="12" font-weight="bold">Best for:</text>
+  <text x="120" y="248" fill="#555" font-size="12">Small arrays (n &#x2264; 16) or nearly-sorted data &#x2014; faster than O(n log n) sorts at small scale</text>
+
+  <text x="40" y="270" fill="#2c3e50" font-size="12" font-weight="bold">Use when:</text>
+  <text x="120" y="270" fill="#555" font-size="12">Data arrives incrementally (insert each new element into an already-sorted list)</text>
+
+  <text x="40" y="292" fill="#2c3e50" font-size="12" font-weight="bold">Advantage:</text>
+  <text x="120" y="292" fill="#27ae60" font-size="12">O(n) best case &#x2022; Stable &#x2022; Low overhead &#x2022; Used as base case inside std::sort</text>
+
+  <text x="40" y="314" fill="#2c3e50" font-size="12" font-weight="bold">Real world:</text>
+  <text x="120" y="314" fill="#555" font-size="12">Sorting a hand of playing cards &#x2014; you pick up each card and slide it into the right spot</text>
+
+  <!-- ===== SELECTION SORT ===== -->
+  <rect x="20" y="334" width="860" height="110" rx="10" fill="#fff" stroke="#e67e22" stroke-width="2"/>
+  <rect x="20" y="334" width="860" height="32" rx="10" fill="#e67e22"/>
+  <rect x="20" y="350" width="860" height="16" fill="#e67e22"/>
+  <text x="450" y="356" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Selection Sort</text>
+
+  <text x="40" y="386" fill="#2c3e50" font-size="12" font-weight="bold">Best for:</text>
+  <text x="120" y="386" fill="#555" font-size="12">When writes (swaps) are expensive &#x2014; only n&#x2212;1 swaps total, fewest of any quadratic sort</text>
+
+  <text x="40" y="408" fill="#2c3e50" font-size="12" font-weight="bold">Use when:</text>
+  <text x="120" y="408" fill="#555" font-size="12">Writing to flash memory or EEPROM where each write has a cost (wear leveling)</text>
+
+  <text x="40" y="430" fill="#2c3e50" font-size="12" font-weight="bold">Drawback:</text>
+  <text x="120" y="430" fill="#e74c3c" font-size="12">Always O(n&#xB2;) &#x2014; no best-case shortcut, not stable</text>
+
+  <!-- ===== BOTTOM: Quick Decision Guide ===== -->
+  <rect x="20" y="460" width="860" height="50" rx="10" fill="#f4f6f7" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="450" y="480" text-anchor="middle" fill="#2c3e50" font-size="13" font-weight="bold">Quick Decision Guide</text>
+  <text x="100" y="500" fill="#8e44ad" font-size="12" font-weight="bold">Small or nearly-sorted? &#x2192; Insertion Sort</text>
+  <text x="420" y="500" fill="#e67e22" font-size="12" font-weight="bold">Minimize writes? &#x2192; Selection Sort</text>
+  <text x="680" y="500" fill="#3498db" font-size="12" font-weight="bold">Learning? &#x2192; Bubble Sort</text>
+</svg>
