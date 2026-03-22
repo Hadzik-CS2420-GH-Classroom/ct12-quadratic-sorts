@@ -14,19 +14,19 @@
   <rect x="30" y="162" width="420" height="54" fill="#f38ba820"/>
   <rect x="30" y="234" width="420" height="18" fill="#a6e3a120"/>
 
-  <!-- Code (pseudocode-ish) -->
+  <!-- Code (x offsets: 50=L0, 66=L1, 82=L2, 98=L3) -->
   <text x="50" y="84"  fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">void</tspan> <tspan fill="#89b4fa">insertion_sort</tspan>(vector&lt;int&gt;&amp; data) {</text>
-  <text x="50" y="102" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">for</tspan> (i = 1; i &lt; n; ++i) {</text>
-  <text x="50" y="120" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // Step 1: save the current element</text>
-  <text x="50" y="138" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">int</tspan> key = data[i];</text>
-  <text x="50" y="156" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">int</tspan> j = i - 1;</text>
-  <text x="50" y="174" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // Step 2: shift elements &gt; key right</text>
-  <text x="50" y="192" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">while</tspan> (j &gt;= 0 &amp;&amp; data[j] &gt; key) {</text>
-  <text x="50" y="210" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">      data[j+1] = data[j]; --j;</text>
-  <text x="50" y="228" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    }</text>
-  <text x="50" y="246" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // Step 3: place key in the gap</text>
-  <text x="50" y="264" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">    data[j+1] = key;</text>
-  <text x="50" y="282" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  }</text>
+  <text x="66" y="102" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (i = 1; i &lt; n; ++i) {</text>
+  <text x="82" y="120" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// Step 1: save the current element</text>
+  <text x="82" y="138" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">int</tspan> key = data[i];</text>
+  <text x="82" y="156" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">int</tspan> j = i - 1;</text>
+  <text x="82" y="174" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// Step 2: shift elements &gt; key right</text>
+  <text x="82" y="192" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">while</tspan> (j &gt;= 0 &amp;&amp; data[j] &gt; key) {</text>
+  <text x="98" y="210" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">data[j+1] = data[j]; --j;</text>
+  <text x="82" y="228" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
+  <text x="82" y="246" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// Step 3: place key in the gap</text>
+  <text x="82" y="264" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">data[j+1] = key;</text>
+  <text x="66" y="282" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
   <text x="50" y="300" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
 
   <!-- ===== Right panel -- three steps visualized ===== -->

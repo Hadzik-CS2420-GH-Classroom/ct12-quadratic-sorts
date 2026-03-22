@@ -31,21 +31,21 @@
   <rect x="30" y="144" width="420" height="54" fill="#f38ba820"/>
   <rect x="30" y="234" width="420" height="18" fill="#a6e3a120"/>
 
-  <!-- Code -->
+  <!-- Code (x offsets: 62=L0, 78=L1, 94=L2, 110=L3) -->
   <text x="62" y="84"  fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">void</tspan> <tspan fill="#89b4fa">bubble_sort</tspan>(vector&lt;int&gt;&amp; data) {</text>
-  <text x="62" y="102" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">int</tspan> n = data.size();</text>
-  <text x="62" y="120" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">for</tspan> (<tspan fill="#cba6f7">int</tspan> i = 0; i &lt; n-1; ++i) {</text>
-  <text x="62" y="138" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">bool</tspan> swapped = <tspan fill="#fab387">false</tspan>;</text>
-  <text x="62" y="156" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">for</tspan> (<tspan fill="#cba6f7">int</tspan> j = 0; j &lt; n-1-i; ++j) {</text>
-  <text x="62" y="174" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">      <tspan fill="#cba6f7">if</tspan> (data[j] &gt; data[j+1]) {</text>
-  <text x="62" y="192" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">        swap(data[j], data[j+1]);</text>
-  <text x="62" y="210" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">        swapped = <tspan fill="#fab387">true</tspan>;</text>
-  <text x="62" y="228" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">      }</text>
-  <text x="62" y="246" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    }</text>
-  <text x="62" y="264" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">if</tspan> (!swapped) <tspan fill="#cba6f7">break</tspan>;</text>
-  <text x="62" y="282" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // after this pass, data[n-1-i]</text>
-  <text x="62" y="300" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // is in its final position</text>
-  <text x="62" y="318" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  }</text>
+  <text x="78" y="102" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">int</tspan> n = data.size();</text>
+  <text x="78" y="120" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (<tspan fill="#cba6f7">int</tspan> i = 0; i &lt; n-1; ++i) {</text>
+  <text x="94" y="138" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">bool</tspan> swapped = <tspan fill="#fab387">false</tspan>;</text>
+  <text x="94" y="156" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (<tspan fill="#cba6f7">int</tspan> j = 0; j &lt; n-1-i; ++j) {</text>
+  <text x="110" y="174" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">if</tspan> (data[j] &gt; data[j+1]) {</text>
+  <text x="126" y="192" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">swap(data[j], data[j+1]);</text>
+  <text x="126" y="210" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">swapped = <tspan fill="#fab387">true</tspan>;</text>
+  <text x="110" y="228" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
+  <text x="94" y="246" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
+  <text x="94" y="264" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">if</tspan> (!swapped) <tspan fill="#cba6f7">break</tspan>;</text>
+  <text x="94" y="282" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// after this pass, data[n-1-i]</text>
+  <text x="94" y="300" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// is in its final position</text>
+  <text x="78" y="318" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
   <text x="62" y="336" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
 
   <!-- ===== Right panel -- array state ===== -->

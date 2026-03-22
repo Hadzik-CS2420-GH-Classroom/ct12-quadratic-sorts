@@ -12,9 +12,9 @@
 
   <text x="50" y="84"  fill="#6c7086" font-size="12" font-family="Consolas, monospace">// inner loop: one full pass</text>
   <text x="50" y="102" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (j = 0; j &lt; n-1-i; ++j) {</text>
-  <text x="50" y="120" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">if</tspan> (data[j] &gt; data[j+1])</text>
-  <text x="50" y="138" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    swap(data[j], data[j+1]);</text>
-  <text x="50" y="156" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    swapped = <tspan fill="#fab387">true</tspan>;</text>
+  <text x="66" y="120" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">if</tspan> (data[j] &gt; data[j+1])</text>
+  <text x="82" y="138" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">swap(data[j], data[j+1]);</text>
+  <text x="82" y="156" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">swapped = <tspan fill="#fab387">true</tspan>;</text>
   <text x="50" y="174" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
   <text x="50" y="200" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// after: largest is at data[n-1-i]</text>
 

@@ -12,11 +12,11 @@
   <rect x="30" y="152" width="380" height="36" fill="#a6e3a120"/>
 
   <text x="50" y="94"  fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (i = 0; i &lt; n-1; ++i) {</text>
-  <text x="50" y="112" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">bool</tspan> swapped = <tspan fill="#fab387">false</tspan>;</text>
-  <text x="50" y="130" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">for</tspan> (j = 0; j &lt; n-1-i; ++j)</text>
-  <text x="50" y="148" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // ... compare and swap ...</text>
-  <text x="50" y="166" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">if</tspan> (!swapped) <tspan fill="#cba6f7">break</tspan>;</text>
-  <text x="50" y="184" fill="#6c7086" font-size="12" font-family="Consolas, monospace">  // no swaps = sorted = done</text>
+  <text x="66" y="112" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">bool</tspan> swapped = <tspan fill="#fab387">false</tspan>;</text>
+  <text x="66" y="130" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (j = 0; j &lt; n-1-i; ++j)</text>
+  <text x="82" y="148" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// ... compare and swap ...</text>
+  <text x="66" y="166" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">if</tspan> (!swapped) <tspan fill="#cba6f7">break</tspan>;</text>
+  <text x="66" y="184" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// no swaps = sorted = done</text>
   <text x="50" y="202" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
 
   <!-- ===== Right panel ===== -->

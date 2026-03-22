@@ -13,20 +13,20 @@
   <rect x="30" y="126" width="420" height="54" fill="#f38ba820"/>
   <rect x="30" y="216" width="420" height="36" fill="#a6e3a120"/>
 
-  <!-- Code (pseudocode) -->
+  <!-- Code (x offsets: 50=L0, 66=L1, 82=L2, 98=L3) -->
   <text x="50" y="84"  fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">void</tspan> <tspan fill="#89b4fa">selection_sort</tspan>(vector&lt;int&gt;&amp; data) {</text>
-  <text x="50" y="102" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">for</tspan> (i = 0; i &lt; n-1; ++i) {</text>
-  <text x="50" y="120" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // Step 1: assume data[i] is the min</text>
-  <text x="50" y="138" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">int</tspan> min_idx = i;</text>
-  <text x="50" y="156" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // Step 2: scan unsorted for smaller</text>
-  <text x="50" y="174" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">for</tspan> (j = i+1; j &lt; n; ++j) {</text>
-  <text x="50" y="192" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">      <tspan fill="#cba6f7">if</tspan> (data[j] &lt; data[min_idx])</text>
-  <text x="50" y="210" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">        min_idx = j;</text>
-  <text x="50" y="228" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    }</text>
-  <text x="50" y="246" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // Step 3: swap min into position i</text>
-  <text x="50" y="264" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">if</tspan> (min_idx != i)</text>
-  <text x="50" y="282" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">      swap(data[i], data[min_idx]);</text>
-  <text x="50" y="300" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  }</text>
+  <text x="66" y="102" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (i = 0; i &lt; n-1; ++i) {</text>
+  <text x="82" y="120" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// Step 1: assume data[i] is the min</text>
+  <text x="82" y="138" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">int</tspan> min_idx = i;</text>
+  <text x="82" y="156" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// Step 2: scan unsorted for smaller</text>
+  <text x="82" y="174" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (j = i+1; j &lt; n; ++j) {</text>
+  <text x="98" y="192" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">if</tspan> (data[j] &lt; data[min_idx])</text>
+  <text x="114" y="210" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">min_idx = j;</text>
+  <text x="82" y="228" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
+  <text x="82" y="246" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// Step 3: swap min into position i</text>
+  <text x="82" y="264" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">if</tspan> (min_idx != i)</text>
+  <text x="98" y="282" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">swap(data[i], data[min_idx]);</text>
+  <text x="66" y="300" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
   <text x="50" y="318" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
 
   <!-- ===== Right panel -- three steps visualized ===== -->
