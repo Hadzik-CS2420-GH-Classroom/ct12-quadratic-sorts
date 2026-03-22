@@ -35,18 +35,18 @@
   <rect x="470" y="62" width="420" height="72" rx="7" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.5"/>
   <text x="680" y="80" text-anchor="middle" fill="#6c3483" font-size="13" font-weight="bold">Pass i = 1: scan unsorted region</text>
 
-  <rect x="490" y="90" width="50" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="515" y="109" text-anchor="middle" fill="#fff" font-size="12">55</text>
-  <rect x="548" y="90" width="50" height="28" rx="4" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
-  <text x="573" y="109" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">78</text>
-  <rect x="606" y="90" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="631" y="109" text-anchor="middle" fill="#fff" font-size="12">95</text>
-  <rect x="664" y="90" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="689" y="109" text-anchor="middle" fill="#fff" font-size="12">62</text>
-  <rect x="722" y="90" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="747" y="109" text-anchor="middle" fill="#fff" font-size="12">88</text>
-  <text x="790" y="102" fill="#e67e22" font-size="11">i = 1</text>
-  <text x="790" y="116" fill="#e67e22" font-size="11">min_idx = 1</text>
+  <rect x="490" y="90" width="38" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="509" y="109" text-anchor="middle" fill="#fff" font-size="12">55</text>
+  <rect x="534" y="90" width="38" height="28" rx="4" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
+  <text x="553" y="109" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">78</text>
+  <rect x="578" y="90" width="38" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="597" y="109" text-anchor="middle" fill="#fff" font-size="12">95</text>
+  <rect x="622" y="90" width="38" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="641" y="109" text-anchor="middle" fill="#fff" font-size="12">62</text>
+  <rect x="666" y="90" width="38" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="685" y="109" text-anchor="middle" fill="#fff" font-size="12">88</text>
+  <text x="720" y="102" fill="#e67e22" font-size="11">i = 1</text>
+  <text x="720" y="116" fill="#e67e22" font-size="11">min_idx = 1</text>
 
   <!-- Step 2: Scanning -->
   <rect x="470" y="144" width="420" height="104" rx="7" fill="#fef9e7" stroke="#e67e22" stroke-width="1.5"/>
@@ -68,18 +68,18 @@
   <rect x="470" y="258" width="420" height="80" rx="7" fill="#e8f5e9" stroke="#27ae60" stroke-width="1.5"/>
   <text x="680" y="276" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">Step 3: swap(data[1], data[3]) (line 10)</text>
 
-  <rect x="490" y="288" width="50" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="515" y="307" text-anchor="middle" fill="#fff" font-size="12">55</text>
-  <rect x="548" y="288" width="50" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
-  <text x="573" y="307" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">62</text>
-  <rect x="606" y="288" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="631" y="307" text-anchor="middle" fill="#fff" font-size="12">95</text>
-  <rect x="664" y="288" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="689" y="307" text-anchor="middle" fill="#fff" font-size="12">78</text>
-  <rect x="722" y="288" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="747" y="307" text-anchor="middle" fill="#fff" font-size="12">88</text>
-  <text x="790" y="300" fill="#27ae60" font-size="12" font-weight="bold">62 is now</text>
-  <text x="790" y="316" fill="#27ae60" font-size="11">in final position</text>
+  <rect x="490" y="288" width="38" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="509" y="307" text-anchor="middle" fill="#fff" font-size="12">55</text>
+  <rect x="534" y="288" width="38" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="553" y="307" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">62</text>
+  <rect x="578" y="288" width="38" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="597" y="307" text-anchor="middle" fill="#fff" font-size="12">95</text>
+  <rect x="622" y="288" width="38" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="641" y="307" text-anchor="middle" fill="#fff" font-size="12">78</text>
+  <rect x="666" y="288" width="38" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="685" y="307" text-anchor="middle" fill="#fff" font-size="12">88</text>
+  <text x="720" y="300" fill="#27ae60" font-size="12" font-weight="bold">62 is now</text>
+  <text x="720" y="316" fill="#27ae60" font-size="11">in final position</text>
 
   <!-- Footer -->
   <rect x="30" y="350" width="860" height="60" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
