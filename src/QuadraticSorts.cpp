@@ -16,6 +16,10 @@
 // 1. Bubble Sort
 // ---------------------------------------------------------------------------
 //
+// ? SEE DIAGRAM: images/cpp_diagrams.md #1 Bubble Sort -- Code + Array State
+// ? SEE DIAGRAM: images/cpp_diagrams.md #2 Bubble Sort -- One Pass
+// ? SEE DIAGRAM: images/cpp_diagrams.md #3 Bubble Sort -- Early Exit Optimization
+//
 // ! DISCUSSION: How bubble sort works.
 //   - compare each pair of adjacent elements
 //   - if they're out of order, swap them
@@ -32,17 +36,24 @@
 void bubble_sort(std::vector<int>& data) {
     int n = static_cast<int>(data.size());
 
-    // TODO 1: Implement bubble sort
-    //   - outer loop: i from 0 to n-1 (each pass places one more element)
-    //   - track a bool "swapped" -- set to false at the start of each pass
-    //   - inner loop: j from 0 to n-2-i (shrinks each pass -- last i elements are sorted)
-    //     - if data[j] > data[j+1], swap them and set swapped = true
-    //   - after the inner loop: if !swapped, break (array is sorted -- early exit)
+    for (int i = 0; i < n - 1; ++i) {
+        bool swapped = false;
+        for (int j = 0; j < n - 1 - i; ++j) {
+            if (data[j] > data[j + 1]) {
+                std::swap(data[j], data[j + 1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) break;
+    }
 }
 
 // ---------------------------------------------------------------------------
 // 2. Insertion Sort
 // ---------------------------------------------------------------------------
+//
+// ? SEE DIAGRAM: images/cpp_diagrams.md #4 Insertion Sort -- Code + Array State
+// ? SEE DIAGRAM: images/cpp_diagrams.md #5 Insertion Sort -- Inserting One Element
 //
 // ! DISCUSSION: How insertion sort works.
 //   - divide the array into a "sorted region" (left) and "unsorted region" (right)
@@ -66,19 +77,23 @@ void bubble_sort(std::vector<int>& data) {
 void insertion_sort(std::vector<int>& data) {
     int n = static_cast<int>(data.size());
 
-    // TODO 2: Implement insertion sort
-    //   - outer loop: i from 1 to n-1 (element 0 is already "sorted")
-    //   - save data[i] as the "key" -- the element we're inserting
-    //   - set j = i - 1 (start of the sorted region, scanning right to left)
-    //   - while j >= 0 AND data[j] > key:
-    //       shift data[j] one position right: data[j+1] = data[j]
-    //       decrement j
-    //   - place the key at data[j+1] (the correct sorted position)
+    for (int i = 1; i < n; ++i) {
+        int key = data[i];
+        int j = i - 1;
+        while (j >= 0 && data[j] > key) {
+            data[j + 1] = data[j];
+            --j;
+        }
+        data[j + 1] = key;
+    }
 }
 
 // ---------------------------------------------------------------------------
 // 3. Selection Sort
 // ---------------------------------------------------------------------------
+//
+// ? SEE DIAGRAM: images/cpp_diagrams.md #6 Selection Sort -- Code + Array State
+// ? SEE DIAGRAM: images/cpp_diagrams.md #7 Selection Sort -- Find Minimum, Swap to Front
 //
 // ! DISCUSSION: How selection sort works.
 //   - find the MINIMUM element in the unsorted region
@@ -101,12 +116,17 @@ void insertion_sort(std::vector<int>& data) {
 void selection_sort(std::vector<int>& data) {
     int n = static_cast<int>(data.size());
 
-    // TODO 3: Implement selection sort
-    //   - outer loop: i from 0 to n-2
-    //   - set min_idx = i (assume current position holds the minimum)
-    //   - inner loop: j from i+1 to n-1
-    //     - if data[j] < data[min_idx], update min_idx = j
-    //   - after inner loop: if min_idx != i, swap data[i] and data[min_idx]
+    for (int i = 0; i < n - 1; ++i) {
+        int min_idx = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (data[j] < data[min_idx]) {
+                min_idx = j;
+            }
+        }
+        if (min_idx != i) {
+            std::swap(data[i], data[min_idx]);
+        }
+    }
 }
 
 // ---------------------------------------------------------------------------

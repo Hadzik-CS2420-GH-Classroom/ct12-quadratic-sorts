@@ -7,9 +7,10 @@
 // QuadraticSorts -- O(n^2) sorting algorithms
 // ---------------------------------------------------------------------------
 //
-// ? SEE DIAGRAM: images/svgs/why_sort_data.svg -- why sorting matters, what it enables
-// ? SEE DIAGRAM: images/svgs/quadratic_sorts_overview.svg -- the three quadratic sorts at a glance
-// ? SEE DIAGRAM: images/svgs/nested_loops_quadratic.svg -- nested loops, math, and O(n²) growth curve
+// ? SEE DIAGRAM: images/header_diagrams.md
+//   - #1 Why Sort Data?
+//   - #2 The Three Quadratic Sorts
+//   - #3 Why Nested Loops = O(n²)
 //
 // ! DISCUSSION: Why "quadratic"?
 //   - Nested loops: n × n = n² -- when n doubles, runtime quadruples
@@ -25,7 +26,7 @@
 // Bubble Sort
 // ---------------------------------------------------------------------------
 //
-// ? SEE DIAGRAM: images/svgs/bubble_sort_complete.svg -- full walkthrough on [5,2,8,1,4]
+// ? SEE DIAGRAM: images/header_diagrams.md #4 Bubble Sort -- Complete Walkthrough
 //
 // ! DISCUSSION: Swap adjacent pairs -- largest bubbles to end each pass.
 //   - Time: O(n^2) avg/worst | O(n) best (early exit)
@@ -37,7 +38,7 @@ void bubble_sort(std::vector<int>& data);
 // Insertion Sort
 // ---------------------------------------------------------------------------
 //
-// ? SEE DIAGRAM: images/svgs/insertion_sort_complete.svg -- full walkthrough on [5,2,8,1,4]
+// ? SEE DIAGRAM: images/header_diagrams.md #5 Insertion Sort -- Complete Walkthrough
 //
 // ! DISCUSSION: Slide each element left into the sorted region.
 //   - Time: O(n^2) avg/worst | O(n) best (already sorted)
@@ -50,7 +51,7 @@ void insertion_sort(std::vector<int>& data);
 // Selection Sort
 // ---------------------------------------------------------------------------
 //
-// ? SEE DIAGRAM: images/svgs/selection_sort_complete.svg -- full walkthrough on [5,2,8,1,4]
+// ? SEE DIAGRAM: images/header_diagrams.md #6 Selection Sort -- Complete Walkthrough
 //
 // ! DISCUSSION: Find the min in unsorted region, swap to front.
 //   - Time: O(n^2) always -- no best-case shortcut
@@ -58,6 +59,14 @@ void insertion_sort(std::vector<int>& data);
 //   - Fewest writes (n-1 swaps total)
 //
 void selection_sort(std::vector<int>& data);
+
+// ---------------------------------------------------------------------------
+// Summary: Which quadratic sort wins?
+// ---------------------------------------------------------------------------
+//
+// ? SEE DIAGRAM: images/header_diagrams.md #7 When to Use Which Sort?
+// ? SEE DIAGRAM: images/header_diagrams.md #8 O(n²) Sorts -- Side-by-Side Comparison
+//
 
 // ---------------------------------------------------------------------------
 // Utility: print a vector (for demo output)

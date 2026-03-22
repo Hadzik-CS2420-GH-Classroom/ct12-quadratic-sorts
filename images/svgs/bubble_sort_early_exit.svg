@@ -1,39 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250" font-family="'Segoe UI', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" font-family="'Segoe UI', Arial, sans-serif">
   <rect width="100%" height="100%" fill="white"/>
+
   <!-- Title -->
-  <text x="400" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Bubble Sort -- Early Exit Optimization</text>
-  <text x="400" y="50" text-anchor="middle" fill="#555" font-size="13">If a full pass makes zero swaps, the array is already sorted -- stop early</text>
+  <text x="460" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Bubble Sort -- Early Exit Optimization</text>
+  <text x="460" y="50" text-anchor="middle" fill="#555" font-size="13">If a full pass makes zero swaps, the array is already sorted -- break out of the outer loop</text>
 
-  <!-- Already sorted array -->
-  <text x="40" y="90" fill="#888" font-size="12" font-weight="bold">Input:</text>
-  <rect x="110" y="72" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="140" y="95" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">1</text>
-  <rect x="178" y="72" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="208" y="95" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">2</text>
-  <rect x="246" y="72" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="276" y="95" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">3</text>
-  <rect x="314" y="72" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="344" y="95" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">4</text>
-  <rect x="382" y="72" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="412" y="95" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">5</text>
+  <!-- ===== Code box (left) ===== -->
+  <rect x="30" y="62" width="380" height="180" rx="8" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5"/>
 
-  <text x="480" y="88" fill="#27ae60" font-size="12" font-weight="bold">Already sorted!</text>
+  <rect x="30" y="80"  width="380" height="18" fill="#cba6f720"/>
+  <rect x="30" y="152" width="380" height="36" fill="#a6e3a120"/>
 
-  <!-- Pass 1 check -->
-  <text x="40" y="140" fill="#888" font-size="12">Pass 1:</text>
-  <text x="110" y="140" fill="#555" font-size="12">Compare all adjacent pairs: 1&lt;2, 2&lt;3, 3&lt;4, 4&lt;5</text>
-  <text x="480" y="140" fill="#27ae60" font-size="12" font-weight="bold">swapped = false</text>
+  <text x="50" y="94"  fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (i = 0; i &lt; n-1; ++i) {</text>
+  <text x="50" y="112" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">bool</tspan> swapped = <tspan fill="#fab387">false</tspan>;</text>
+  <text x="50" y="130" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">for</tspan> (j = 0; j &lt; n-1-i; ++j)</text>
+  <text x="50" y="148" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // ... compare and swap ...</text>
+  <text x="50" y="166" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">if</tspan> (!swapped) <tspan fill="#cba6f7">break</tspan>;</text>
+  <text x="50" y="184" fill="#6c7086" font-size="12" font-family="Consolas, monospace">  // no swaps = sorted = done</text>
+  <text x="50" y="202" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
 
-  <!-- Early exit -->
-  <text x="40" y="170" fill="#888" font-size="12">Result:</text>
-  <text x="110" y="170" fill="#27ae60" font-size="13" font-weight="bold">No swaps in pass 1 -- break!</text>
+  <!-- ===== Right panel ===== -->
+
+  <!-- Already sorted input -->
+  <rect x="430" y="62" width="460" height="72" rx="7" fill="#eaf4fb" stroke="#5dade2" stroke-width="1.5"/>
+  <text x="660" y="80" text-anchor="middle" fill="#2980b9" font-size="13" font-weight="bold">Scenario: array is already sorted</text>
+  <rect x="450" y="90" width="50" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="475" y="109" text-anchor="middle" fill="#fff" font-size="12">1</text>
+  <rect x="508" y="90" width="50" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="533" y="109" text-anchor="middle" fill="#fff" font-size="12">2</text>
+  <rect x="566" y="90" width="50" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="591" y="109" text-anchor="middle" fill="#fff" font-size="12">3</text>
+  <rect x="624" y="90" width="50" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="649" y="109" text-anchor="middle" fill="#fff" font-size="12">4</text>
+  <rect x="682" y="90" width="50" height="28" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="707" y="109" text-anchor="middle" fill="#fff" font-size="12">5</text>
+  <text x="750" y="104" fill="#27ae60" font-size="12" font-weight="bold">sorted!</text>
+
+  <!-- Pass 1: no swaps -->
+  <rect x="430" y="144" width="460" height="56" rx="7" fill="#fef9e7" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="660" y="162" text-anchor="middle" fill="#e67e22" font-size="13" font-weight="bold">Pass i=0: compare all adjacent pairs</text>
+  <text x="660" y="182" text-anchor="middle" fill="#555" font-size="12">1&lt;2, 2&lt;3, 3&lt;4, 4&lt;5 -- zero swaps performed</text>
+  <text x="860" y="176" text-anchor="end" fill="#e67e22" font-size="12" font-weight="bold">swapped = false</text>
+
+  <!-- Break -->
+  <rect x="430" y="210" width="460" height="44" rx="7" fill="#e8f5e9" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="660" y="228" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">if (!swapped) break -- done in 1 pass!</text>
+  <text x="860" y="244" text-anchor="end" fill="#27ae60" font-size="12">O(n) -- just n-1 comparisons</text>
 
   <!-- Comparison boxes -->
-  <rect x="40" y="190" width="340" height="48" rx="8" fill="#e8f5e9" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="210" y="210" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">With early exit: O(n)</text>
-  <text x="210" y="228" text-anchor="middle" fill="#2e7d32" font-size="12">Only 1 pass needed (n-1 comparisons)</text>
+  <rect x="30" y="268" width="420" height="60" rx="8" fill="#e8f5e9" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="240" y="290" text-anchor="middle" fill="#1b5e20" font-size="14" font-weight="bold">With early exit: O(n) best case</text>
+  <text x="240" y="310" text-anchor="middle" fill="#2e7d32" font-size="12">Already sorted? 1 pass, n-1 comparisons, done.</text>
 
-  <rect x="420" y="190" width="340" height="48" rx="8" fill="#fce4ec" stroke="#e74c3c" stroke-width="1.5"/>
-  <text x="590" y="210" text-anchor="middle" fill="#b71c1c" font-size="13" font-weight="bold">Without early exit: O(n^2)</text>
-  <text x="590" y="228" text-anchor="middle" fill="#c62828" font-size="12">Would do n passes regardless</text>
+  <rect x="470" y="268" width="420" height="60" rx="8" fill="#fce4ec" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="680" y="290" text-anchor="middle" fill="#b71c1c" font-size="14" font-weight="bold">Without early exit: O(n^2) always</text>
+  <text x="680" y="310" text-anchor="middle" fill="#c62828" font-size="12">Would run all n-1 passes even if sorted after pass 1.</text>
 </svg>

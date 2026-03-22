@@ -59,14 +59,7 @@ Conceptual diagrams referenced from `QuadraticSorts.h`.
 
 ---
 
-## 8. Stability -- Do Equal Elements Keep Their Order?
-*`QuadraticSorts.h` -- bubble and insertion are stable; selection is not*
-
-![Stability -- Do Equal Elements Keep Their Order?](svgs/stability_comparison.svg)
-
----
-
-## 9. O(n^2) Sorts -- Side-by-Side Comparison
+## 8. O(n^2) Sorts -- Side-by-Side Comparison
 *`QuadraticSorts.h` -- best case, average case, space, and stability at a glance*
 
 ![O(n^2) Sorts -- Side-by-Side Comparison](svgs/quadratic_sorts_comparison.svg)

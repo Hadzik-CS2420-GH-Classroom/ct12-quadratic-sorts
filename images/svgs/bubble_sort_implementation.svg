@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Title -->
+  <text x="460" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">bubble_sort() -- Code + Array State</text>
+  <text x="460" y="50" text-anchor="middle" fill="#555" font-size="13">Outer loop shrinks the unsorted region; inner loop swaps adjacent pairs</text>
+
+  <!-- ===== Code box (left) ===== -->
+  <rect x="30" y="62" width="420" height="310" rx="8" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5"/>
+
+  <!-- Line numbers -->
+  <text x="44" y="84"  fill="#6c7086" font-size="11" font-family="Consolas, monospace">1</text>
+  <text x="44" y="102" fill="#6c7086" font-size="11" font-family="Consolas, monospace">2</text>
+  <text x="44" y="120" fill="#6c7086" font-size="11" font-family="Consolas, monospace">3</text>
+  <text x="44" y="138" fill="#6c7086" font-size="11" font-family="Consolas, monospace">4</text>
+  <text x="44" y="156" fill="#6c7086" font-size="11" font-family="Consolas, monospace">5</text>
+  <text x="44" y="174" fill="#6c7086" font-size="11" font-family="Consolas, monospace">6</text>
+  <text x="44" y="192" fill="#6c7086" font-size="11" font-family="Consolas, monospace">7</text>
+  <text x="44" y="210" fill="#6c7086" font-size="11" font-family="Consolas, monospace">8</text>
+  <text x="44" y="228" fill="#6c7086" font-size="11" font-family="Consolas, monospace">9</text>
+  <text x="37" y="246" fill="#6c7086" font-size="11" font-family="Consolas, monospace">10</text>
+  <text x="37" y="264" fill="#6c7086" font-size="11" font-family="Consolas, monospace">11</text>
+  <text x="37" y="282" fill="#6c7086" font-size="11" font-family="Consolas, monospace">12</text>
+  <text x="37" y="300" fill="#6c7086" font-size="11" font-family="Consolas, monospace">13</text>
+  <text x="37" y="318" fill="#6c7086" font-size="11" font-family="Consolas, monospace">14</text>
+  <text x="37" y="336" fill="#6c7086" font-size="11" font-family="Consolas, monospace">15</text>
+  <text x="37" y="354" fill="#6c7086" font-size="11" font-family="Consolas, monospace">16</text>
+
+  <!-- Highlight bands -->
+  <rect x="30" y="108" width="420" height="18" fill="#cba6f720"/>
+  <rect x="30" y="144" width="420" height="54" fill="#f38ba820"/>
+  <rect x="30" y="234" width="420" height="18" fill="#a6e3a120"/>
+
+  <!-- Code -->
+  <text x="62" y="84"  fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">void</tspan> <tspan fill="#89b4fa">bubble_sort</tspan>(vector&lt;int&gt;&amp; data) {</text>
+  <text x="62" y="102" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">int</tspan> n = data.size();</text>
+  <text x="62" y="120" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  <tspan fill="#cba6f7">for</tspan> (<tspan fill="#cba6f7">int</tspan> i = 0; i &lt; n-1; ++i) {</text>
+  <text x="62" y="138" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">bool</tspan> swapped = <tspan fill="#fab387">false</tspan>;</text>
+  <text x="62" y="156" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">for</tspan> (<tspan fill="#cba6f7">int</tspan> j = 0; j &lt; n-1-i; ++j) {</text>
+  <text x="62" y="174" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">      <tspan fill="#cba6f7">if</tspan> (data[j] &gt; data[j+1]) {</text>
+  <text x="62" y="192" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">        swap(data[j], data[j+1]);</text>
+  <text x="62" y="210" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">        swapped = <tspan fill="#fab387">true</tspan>;</text>
+  <text x="62" y="228" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">      }</text>
+  <text x="62" y="246" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">    }</text>
+  <text x="62" y="264" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">    <tspan fill="#cba6f7">if</tspan> (!swapped) <tspan fill="#cba6f7">break</tspan>;</text>
+  <text x="62" y="282" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // after this pass, data[n-1-i]</text>
+  <text x="62" y="300" fill="#6c7086" font-size="12" font-family="Consolas, monospace">    // is in its final position</text>
+  <text x="62" y="318" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">  }</text>
+  <text x="62" y="336" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
+
+  <!-- ===== Right panel -- array state ===== -->
+
+  <!-- Outer loop annotation -->
+  <rect x="470" y="62" width="420" height="60" rx="7" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.5"/>
+  <text x="680" y="80" text-anchor="middle" fill="#6c3483" font-size="13" font-weight="bold">Outer loop (line 3): i = 0, 1, ..., n-2</text>
+  <text x="680" y="98" text-anchor="middle" fill="#7d3c98" font-size="12">Each pass places one element in its final position</text>
+  <text x="680" y="114" text-anchor="middle" fill="#7d3c98" font-size="12">After pass i, the last i+1 elements are sorted</text>
+
+  <!-- Inner loop: compare + swap -->
+  <rect x="470" y="132" width="420" height="100" rx="7" fill="#fef9e7" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="680" y="150" text-anchor="middle" fill="#e67e22" font-size="13" font-weight="bold">Inner loop (lines 5-9): compare adjacent pairs</text>
+
+  <!-- Array showing a swap -->
+  <text x="490" y="176" fill="#888" font-size="11">j=1:</text>
+  <rect x="540" y="160" width="50" height="30" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="565" y="180" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">78</text>
+  <rect x="598" y="160" width="50" height="30" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="623" y="180" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">95</text>
+  <rect x="656" y="160" width="50" height="30" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="681" y="180" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">62</text>
+  <text x="720" y="176" fill="#e74c3c" font-size="12" font-weight="bold">95 &gt; 62</text>
+  <text x="720" y="192" fill="#e74c3c" font-size="12">SWAP!</text>
+
+  <text x="490" y="220" fill="#888" font-size="11">after:</text>
+  <rect x="540" y="204" width="50" height="30" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="565" y="224" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">78</text>
+  <rect x="598" y="204" width="50" height="30" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="623" y="224" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">62</text>
+  <rect x="656" y="204" width="50" height="30" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="681" y="224" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">95</text>
+  <text x="720" y="220" fill="#27ae60" font-size="12">swapped = true</text>
+
+  <!-- Early exit -->
+  <rect x="470" y="242" width="420" height="56" rx="7" fill="#e8f5e9" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="680" y="260" text-anchor="middle" fill="#1b5e20" font-size="13" font-weight="bold">Early exit (line 11): if (!swapped) break</text>
+  <text x="680" y="278" text-anchor="middle" fill="#2e7d32" font-size="12">No swaps in a full pass = array is sorted = stop early = O(n) best case</text>
+
+  <!-- End of pass result -->
+  <rect x="470" y="308" width="420" height="64" rx="7" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="680" y="326" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">After pass 0: largest (95) is at the end</text>
+  <rect x="490" y="336" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="515" y="355" text-anchor="middle" fill="#fff" font-size="12">62</text>
+  <rect x="548" y="336" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="573" y="355" text-anchor="middle" fill="#fff" font-size="12">78</text>
+  <rect x="606" y="336" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="631" y="355" text-anchor="middle" fill="#fff" font-size="12">55</text>
+  <rect x="664" y="336" width="50" height="28" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="689" y="355" text-anchor="middle" fill="#fff" font-size="12">88</text>
+  <rect x="722" y="336" width="50" height="28" rx="4" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="747" y="355" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">95</text>
+  <text x="785" y="355" fill="#f39c12" font-size="11">final</text>
+
+  <!-- Footer -->
+  <rect x="30" y="384" width="860" height="28" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="460" y="403" text-anchor="middle" fill="#555" font-size="12">n-1-i shrinks the inner loop each pass -- the settled tail is never re-compared</text>
+</svg>
