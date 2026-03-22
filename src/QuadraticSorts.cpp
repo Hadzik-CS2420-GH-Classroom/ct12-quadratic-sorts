@@ -17,8 +17,9 @@
 // ---------------------------------------------------------------------------
 //
 // ? SEE DIAGRAM: images/cpp_diagrams.md #1 Bubble Sort -- Code + Array State
-// ? SEE DIAGRAM: images/cpp_diagrams.md #2 Bubble Sort -- One Pass
-// ? SEE DIAGRAM: images/cpp_diagrams.md #3 Bubble Sort -- Early Exit Optimization
+// ? SEE DIAGRAM: images/cpp_diagrams.md #2 Why j < n-1-i? The Unsorted Region Shrinks
+// ? SEE DIAGRAM: images/cpp_diagrams.md #3 Bubble Sort -- One Pass
+// ? SEE DIAGRAM: images/cpp_diagrams.md #4 Bubble Sort -- Early Exit Optimization
 //
 // ! DISCUSSION: How bubble sort works.
 //   - compare each pair of adjacent elements
@@ -27,10 +28,12 @@
 //   - repeat for the remaining unsorted portion
 //   - early exit: if a full pass makes NO swaps, the array is already sorted
 //
-// ! DISCUSSION: Why bubble sort is O(n^2).
-//   - outer loop: n passes
-//   - inner loop: up to n comparisons per pass
-//   - total comparisons: n + (n-1) + (n-2) + ... + 1 = n(n-1)/2 = O(n^2)
+// ! DISCUSSION: Why the inner loop uses j < n-1-i (not j < n-1).
+//   - after pass 0, the largest element is at data[n-1] -- it's in its final spot
+//   - after pass 1, the 2nd largest is at data[n-2] -- also final
+//   - after pass i, the last i+1 elements are sorted and never need comparing again
+//   - so the inner loop only needs to go up to n-1-i, shrinking by 1 each pass
+//   - total comparisons: (n-1) + (n-2) + ... + 1 = n(n-1)/2 = O(n^2)
 //   - best case O(n): already sorted, the first pass finds no swaps and exits
 //
 void bubble_sort(std::vector<int>& data) {
@@ -52,8 +55,8 @@ void bubble_sort(std::vector<int>& data) {
 // 2. Insertion Sort
 // ---------------------------------------------------------------------------
 //
-// ? SEE DIAGRAM: images/cpp_diagrams.md #4 Insertion Sort -- Code + Array State
-// ? SEE DIAGRAM: images/cpp_diagrams.md #5 Insertion Sort -- Inserting One Element
+// ? SEE DIAGRAM: images/cpp_diagrams.md #5 Insertion Sort -- Code + Array State
+// ? SEE DIAGRAM: images/cpp_diagrams.md #6 Insertion Sort -- Inserting One Element
 //
 // ! DISCUSSION: How insertion sort works.
 //   - divide the array into a "sorted region" (left) and "unsorted region" (right)
@@ -92,8 +95,8 @@ void insertion_sort(std::vector<int>& data) {
 // 3. Selection Sort
 // ---------------------------------------------------------------------------
 //
-// ? SEE DIAGRAM: images/cpp_diagrams.md #6 Selection Sort -- Code + Array State
-// ? SEE DIAGRAM: images/cpp_diagrams.md #7 Selection Sort -- Find Minimum, Swap to Front
+// ? SEE DIAGRAM: images/cpp_diagrams.md #7 Selection Sort -- Code + Array State
+// ? SEE DIAGRAM: images/cpp_diagrams.md #8 Selection Sort -- Find Minimum, Swap to Front
 //
 // ! DISCUSSION: How selection sort works.
 //   - find the MINIMUM element in the unsorted region
