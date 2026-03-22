@@ -18,7 +18,7 @@
   <text x="50" y="174" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
   <text x="50" y="200" fill="#6c7086" font-size="12" font-family="Consolas, monospace">// after: largest is at data[n-1-i]</text>
 
-  <!-- ===== Right panel -- step by step ===== -->
+  <!-- Right panel: step by step -->
 
   <!-- Start -->
   <text x="430" y="78" fill="#888" font-size="12" font-weight="bold">Start:</text>

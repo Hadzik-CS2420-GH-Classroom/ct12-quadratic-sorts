@@ -29,7 +29,7 @@
   <text x="66" y="282" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
   <text x="50" y="300" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
 
-  <!-- ===== Right panel -- three steps visualized ===== -->
+  <!-- Right panel: three steps visualized -->
 
   <!-- Step 1: Save key -->
   <rect x="470" y="62" width="420" height="72" rx="7" fill="#eaf4fb" stroke="#5dade2" stroke-width="1.5"/>

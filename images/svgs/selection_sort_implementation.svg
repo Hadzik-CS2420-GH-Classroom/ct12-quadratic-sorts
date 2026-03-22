@@ -29,7 +29,7 @@
   <text x="66" y="300" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
   <text x="50" y="318" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
 
-  <!-- ===== Right panel -- three steps visualized ===== -->
+  <!-- Right panel: three steps visualized -->
 
   <!-- Step 1: Start of pass -->
   <rect x="470" y="62" width="420" height="72" rx="7" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.5"/>

@@ -48,7 +48,7 @@
   <text x="78" y="318" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
   <text x="62" y="336" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">}</text>
 
-  <!-- ===== Right panel -- array state ===== -->
+  <!-- Right panel: array state -->
 
   <!-- Outer loop annotation -->
   <rect x="470" y="62" width="420" height="60" rx="7" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.5"/>
