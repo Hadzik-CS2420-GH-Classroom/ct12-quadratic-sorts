@@ -26,10 +26,9 @@ int main() {
     std::cout << "--- Part 1: Bubble Sort ---\n";
     std::vector<int> scores1 = {78, 95, 62, 88, 73, 91, 55, 82};
 
-    // TODO 1: Print the unsorted scores, sort with bubble_sort, print the result
-    //   print_vector(scores1, "  Unsorted: ");
-    //   bubble_sort(scores1);
-    //   print_vector(scores1, "  Sorted:   ");
+    print_vector(scores1, "  Unsorted: ");
+    bubble_sort(scores1);
+    print_vector(scores1, "  Sorted:   ");
 
     // -----------------------------------------------------------------------
     // 2. Insertion Sort -- insert each element into the sorted region
@@ -43,10 +42,9 @@ int main() {
     std::cout << "\n--- Part 2: Insertion Sort ---\n";
     std::vector<int> scores2 = {78, 95, 62, 88, 73, 91, 55, 82};
 
-    // TODO 2: Print the unsorted scores, sort with insertion_sort, print the result
-    //   print_vector(scores2, "  Unsorted: ");
-    //   insertion_sort(scores2);
-    //   print_vector(scores2, "  Sorted:   ");
+    print_vector(scores2, "  Unsorted: ");
+    insertion_sort(scores2);
+    print_vector(scores2, "  Sorted:   ");
 
     // -----------------------------------------------------------------------
     // 3. Selection Sort -- find the minimum, swap to front
@@ -60,10 +58,9 @@ int main() {
     std::cout << "\n--- Part 3: Selection Sort ---\n";
     std::vector<int> scores3 = {78, 95, 62, 88, 73, 91, 55, 82};
 
-    // TODO 3: Print the unsorted scores, sort with selection_sort, print the result
-    //   print_vector(scores3, "  Unsorted: ");
-    //   selection_sort(scores3);
-    //   print_vector(scores3, "  Sorted:   ");
+    print_vector(scores3, "  Unsorted: ");
+    selection_sort(scores3);
+    print_vector(scores3, "  Sorted:   ");
 
     // -----------------------------------------------------------------------
     // 4. Compare: already-sorted input (best case for insertion sort)
@@ -78,21 +75,17 @@ int main() {
     std::cout << "\n--- Part 4: Already-Sorted Input ---\n";
     std::vector<int> sorted_scores = {55, 62, 73, 78, 82, 88, 91, 95};
 
-    // TODO 4: Sort an already-sorted array with all three algorithms and print results
-    //   Show that all three produce the same output, but note that
-    //   insertion sort and bubble sort are O(n) here while selection sort is still O(n^2)
-    //
-    //   std::vector<int> test1 = sorted_scores;
-    //   bubble_sort(test1);
-    //   print_vector(test1, "  Bubble:    ");
-    //
-    //   std::vector<int> test2 = sorted_scores;
-    //   insertion_sort(test2);
-    //   print_vector(test2, "  Insertion: ");
-    //
-    //   std::vector<int> test3 = sorted_scores;
-    //   selection_sort(test3);
-    //   print_vector(test3, "  Selection: ");
+    std::vector<int> test1 = sorted_scores;
+    bubble_sort(test1);
+    print_vector(test1, "  Bubble:    ");
+
+    std::vector<int> test2 = sorted_scores;
+    insertion_sort(test2);
+    print_vector(test2, "  Insertion: ");
+
+    std::vector<int> test3 = sorted_scores;
+    selection_sort(test3);
+    print_vector(test3, "  Selection: ");
 
     // -----------------------------------------------------------------------
     // 5. Summary

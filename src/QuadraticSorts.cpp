@@ -21,20 +21,10 @@
 // ? SEE DIAGRAM: images/cpp_diagrams.md #3 Bubble Sort -- One Pass
 // ? SEE DIAGRAM: images/cpp_diagrams.md #4 Bubble Sort -- Early Exit Optimization
 //
-// ! DISCUSSION: How bubble sort works.
-//   - compare each pair of adjacent elements
-//   - if they're out of order, swap them
-//   - after one full pass, the LARGEST element has "bubbled" to the end
-//   - repeat for the remaining unsorted portion
+// ! DISCUSSION: Swap adjacent pairs, largest bubbles to end each pass.
 //   - early exit: if a full pass makes NO swaps, the array is already sorted
-//
-// ! DISCUSSION: Why the inner loop uses j < n-1-i (not j < n-1).
-//   - after pass 0, the largest element is at data[n-1] -- it's in its final spot
-//   - after pass 1, the 2nd largest is at data[n-2] -- also final
-//   - after pass i, the last i+1 elements are sorted and never need comparing again
-//   - so the inner loop only needs to go up to n-1-i, shrinking by 1 each pass
-//   - total comparisons: (n-1) + (n-2) + ... + 1 = n(n-1)/2 = O(n^2)
-//   - best case O(n): already sorted, the first pass finds no swaps and exits
+//   - Time: O(n^2) avg/worst | O(n) best (early exit)
+//   - See diagrams #2-#4 for n-1-i shrinking range, one-pass walkthrough, early exit
 //
 void bubble_sort(std::vector<int>& data) {
     int n = static_cast<int>(data.size());
@@ -58,36 +48,33 @@ void bubble_sort(std::vector<int>& data) {
 // ? SEE DIAGRAM: images/cpp_diagrams.md #5 Insertion Sort -- Code + Array State
 // ? SEE DIAGRAM: images/cpp_diagrams.md #6 Insertion Sort -- Inserting One Element
 //
-// ! DISCUSSION: How insertion sort works.
-//   - divide the array into a "sorted region" (left) and "unsorted region" (right)
-//   - start with the first element as the sorted region (a single element is sorted)
-//   - take the next unsorted element (the "key") and insert it into the correct
-//     position in the sorted region by shifting larger elements right
-//   - repeat until the entire array is sorted
+// ! DISCUSSION: Save the key, shift larger elements right, place the key.
+//   - Stable: uses > (not >=), so equal elements keep their original order
+//   - Time: O(n^2) avg/worst | O(n) best (already sorted, no shifts needed)
+//   - See diagrams #5-#6 for code walkthrough and step-by-step shift animation
 //
-// ! DISCUSSION: Why insertion sort is O(n^2) average but O(n) best case.
-//   - worst case (reverse sorted): each element shifts all the way to position 0
-//     total shifts: 1 + 2 + 3 + ... + (n-1) = O(n^2)
-//   - best case (already sorted): each element is already in position -- no shifts
-//     just one comparison per element = O(n)
-//   - this makes insertion sort excellent for nearly-sorted data
-//
-// ! DISCUSSION: Stability.
-//   - insertion sort is STABLE: equal elements keep their original relative order
-//   - the while loop uses > (not >=), so equal elements are never swapped past each other
-//   - this matters when sorting objects by one field -- other fields stay in order
+// ? Variables:
+//   n         = total number of elements
+//   i         = index of the next unsorted element (sorted region is 0..i-1)
+//   key       = the value we're inserting into the sorted region
+//   shift_pos = scans backward through the sorted region looking for key's spot
 //
 void insertion_sort(std::vector<int>& data) {
-    int n = static_cast<int>(data.size());
+    int n = static_cast<int>(data.size());  // ? size() returns size_t (unsigned) -- cast to int so j can go negative
 
     for (int i = 1; i < n; ++i) {
+        // Step 1: save the current element and start at end of sorted region
         int key = data[i];
-        int j = i - 1;
-        while (j >= 0 && data[j] > key) {
-            data[j + 1] = data[j];
-            --j;
+        int shift_pos = i - 1;
+
+        // Step 2: shift elements > key one position right
+        while (shift_pos >= 0 && data[shift_pos] > key) {
+            data[shift_pos + 1] = data[shift_pos];
+            --shift_pos;
         }
-        data[j + 1] = key;
+
+        // Step 3: place key in the gap
+        data[shift_pos + 1] = key;
     }
 }
 
@@ -97,24 +84,12 @@ void insertion_sort(std::vector<int>& data) {
 //
 // ? SEE DIAGRAM: images/cpp_diagrams.md #7 Selection Sort -- Code + Array State
 // ? SEE DIAGRAM: images/cpp_diagrams.md #8 Selection Sort -- Find Minimum, Swap to Front
+// ? SEE DIAGRAM: images/cpp_diagrams.md #9 Why Selection Sort Is NOT Stable
 //
-// ! DISCUSSION: How selection sort works.
-//   - find the MINIMUM element in the unsorted region
-//   - swap it with the first element of the unsorted region
-//   - the sorted region grows by one from the left
-//   - repeat until the entire array is sorted
-//
-// ! DISCUSSION: Why selection sort is ALWAYS O(n^2).
-//   - no early exit -- even if the array is already sorted
-//   - finding the minimum always requires scanning the entire unsorted region
-//   - comparisons: (n-1) + (n-2) + ... + 1 = n(n-1)/2 = O(n^2) always
-//   - BUT: only n-1 swaps total (fewer writes than bubble sort)
-//
-// ! DISCUSSION: Stability.
-//   - selection sort is NOT stable
-//   - swapping a distant element into position can jump over equal elements
-//   - example: [3a, 3b, 1] -> find min (1), swap with 3a -> [1, 3b, 3a]
-//     3a and 3b swapped their relative order
+// ! DISCUSSION: Find the min in unsorted region, swap to front.
+//   - Time: O(n^2) always -- no early exit, must scan full unsorted region every pass
+//   - Only n-1 swaps total (fewest writes of any quadratic sort)
+//   - NOT stable: swap teleports elements past equals (see diagram #9)
 //
 void selection_sort(std::vector<int>& data) {
     int n = static_cast<int>(data.size());

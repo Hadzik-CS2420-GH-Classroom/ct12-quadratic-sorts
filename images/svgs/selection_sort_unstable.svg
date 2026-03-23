@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" font-family="'Segoe UI', Arial, sans-serif">
+  <rect width="100%" height="100%" fill="white"/>
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e74c3c"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="430" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Why Selection Sort Is NOT Stable</text>
+  <text x="430" y="50" text-anchor="middle" fill="#555" font-size="13">A long-distance swap can teleport an element past its equal, flipping their relative order</text>
+
+  <!-- Setup explanation -->
+  <rect x="30" y="66" width="800" height="62" rx="8" fill="#f4f6f7" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="430" y="84" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">What does "stable" mean? Equal elements keep the order they had in the input.</text>
+  <text x="430" y="102" text-anchor="middle" fill="#555" font-size="12">Below, 3a and 3b are <tspan font-weight="bold">both the value 3</tspan>. The subscripts (a, b) just track which one came first.</text>
+  <text x="430" y="118" text-anchor="middle" fill="#555" font-size="12">A stable sort must keep 3a before 3b in the output, because 3a was first in the input.</text>
+
+  <!-- Input array -->
+  <text x="40" y="156" fill="#333" font-size="13" font-weight="bold">Input:</text>
+  <text x="120" y="156" fill="#888" font-size="10">index 0</text>
+  <text x="188" y="156" fill="#888" font-size="10">index 1</text>
+  <text x="256" y="156" fill="#888" font-size="10">index 2</text>
+  <text x="324" y="156" fill="#888" font-size="10">index 3</text>
+
+  <rect x="120" y="162" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="150" y="185" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">3a</text>
+  <rect x="188" y="162" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="218" y="185" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">3b</text>
+  <rect x="256" y="162" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="286" y="185" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">1</text>
+  <rect x="324" y="162" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="354" y="185" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">2</text>
+
+  <text x="420" y="174" fill="#888" font-size="12">3a and 3b are <tspan font-weight="bold">both the value 3</tspan></text>
+  <text x="420" y="190" fill="#27ae60" font-size="12">3a is before 3b (original order)</text>
+
+  <!-- Pass i=0: the swap -->
+  <rect x="30" y="210" width="800" height="110" rx="8" fill="#fef9e7" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="40" y="230" fill="#e67e22" font-size="13" font-weight="bold">Pass i=0: min = 1 at index 2. swap(data[0], data[2])</text>
+  <text x="40" y="248" fill="#555" font-size="12">3a (index 0) and 1 (index 2) trade places. 3b (index 1) doesn't move.</text>
+
+  <!-- Before swap with arrows -->
+  <rect x="120" y="260" width="60" height="30" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="150" y="280" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">3a</text>
+  <rect x="188" y="260" width="60" height="30" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5" opacity="0.5"/>
+  <text x="218" y="280" text-anchor="middle" fill="#fff" font-size="13">3b</text>
+  <rect x="256" y="260" width="60" height="30" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="286" y="280" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">1</text>
+
+  <!-- Teleport arrow: 3a jumps over 3b -->
+  <path d="M 150,293 Q 218,340 278,293" fill="none" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+  <text x="218" y="338" text-anchor="middle" fill="#e74c3c" font-size="11" font-weight="bold">3a teleports over 3b!</text>
+
+  <!-- After swap -->
+  <text x="420" y="268" fill="#333" font-size="12" font-weight="bold">After swap:</text>
+  <rect x="420" y="276" width="50" height="26" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="445" y="294" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">1</text>
+  <rect x="478" y="276" width="50" height="26" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="503" y="294" text-anchor="middle" fill="#fff" font-size="12">3b</text>
+  <rect x="536" y="276" width="50" height="26" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="561" y="294" text-anchor="middle" fill="#fff" font-size="12">3a</text>
+  <rect x="594" y="276" width="50" height="26" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
+  <text x="619" y="294" text-anchor="middle" fill="#fff" font-size="12">2</text>
+  <text x="660" y="292" fill="#e74c3c" font-size="12" font-weight="bold">3b before 3a!</text>
+
+  <!-- Final sorted result -->
+  <text x="40" y="346" fill="#333" font-size="13" font-weight="bold">Final sorted result:</text>
+  <rect x="120" y="352" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="150" y="375" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">1</text>
+  <rect x="188" y="352" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="218" y="375" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">2</text>
+  <rect x="256" y="352" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="286" y="375" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">3b</text>
+  <rect x="324" y="352" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="354" y="375" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">3a</text>
+
+  <text x="420" y="366" fill="#e74c3c" font-size="14" font-weight="bold">UNSTABLE: 3b before 3a</text>
+  <text x="420" y="384" fill="#555" font-size="12">Input had [3a, 3b] but output has [3b, 3a]</text>
+
+  <!-- Key insight -->
+  <rect x="30" y="400" width="800" height="60" rx="8" fill="#fce4ec" stroke="#e74c3c" stroke-width="1.5"/>
+  <text x="430" y="420" text-anchor="middle" fill="#b71c1c" font-size="13" font-weight="bold">Selection sort swaps distant elements. 3a jumped over 3b in one operation.</text>
+  <text x="430" y="440" text-anchor="middle" fill="#555" font-size="12">Bubble sort and insertion sort only move elements one position at a time (adjacent swap or shift).</text>
+  <text x="430" y="456" text-anchor="middle" fill="#555" font-size="12">An element can never leap over an equal, so those sorts are stable.</text>
+</svg>

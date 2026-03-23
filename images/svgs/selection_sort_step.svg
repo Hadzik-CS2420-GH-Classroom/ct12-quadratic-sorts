@@ -1,69 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" font-family="'Segoe UI', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" font-family="'Segoe UI', Arial, sans-serif">
   <rect width="100%" height="100%" fill="white"/>
+
   <!-- Title -->
-  <text x="430" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Selection Sort -- Find Minimum, Swap to Front</text>
-  <text x="430" y="50" text-anchor="middle" fill="#555" font-size="13">Scan the unsorted region for the smallest element, swap it into the next sorted position</text>
+  <text x="460" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Selection Sort -- Find Minimum, Swap to Front</text>
+  <text x="460" y="50" text-anchor="middle" fill="#555" font-size="13">Walking through i=1: scan unsorted region [78, 95, 62, 88, 73] for the minimum</text>
+
+  <!-- Code box (left) -->
+  <rect x="30" y="62" width="340" height="200" rx="8" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5"/>
+
+  <!-- Step highlight bands -->
+  <rect x="30" y="82"  width="340" height="36" fill="#89b4fa18"/>
+  <rect x="30" y="118" width="340" height="54" fill="#f38ba818"/>
+  <rect x="30" y="188" width="340" height="36" fill="#a6e3a118"/>
+
+  <!-- Code (x offsets: 50=L0, 66=L1, 82=L2) -->
+  <text x="50" y="80"  fill="#6c7086" font-size="11" font-family="Consolas, monospace">// i = 1 this iteration</text>
+  <text x="50" y="98"  fill="#89b4fa" font-size="12" font-family="Consolas, monospace">Step 1: assume data[i] is min</text>
+  <text x="50" y="114" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">int</tspan> min_idx = i;  <tspan fill="#6c7086">// 1</tspan></text>
+  <text x="50" y="132" fill="#f38ba8" font-size="12" font-family="Consolas, monospace">Step 2: scan for smaller</text>
+  <text x="50" y="148" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">for</tspan> (j = i+1; j &lt; n; ++j)</text>
+  <text x="66" y="164" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">if</tspan> (data[j] &lt; data[min_idx])</text>
+  <text x="82" y="180" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">min_idx = j;</text>
+  <text x="50" y="200" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">Step 3: swap min into position</text>
+  <text x="50" y="216" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">if</tspan> (min_idx != i)</text>
+  <text x="66" y="232" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">swap(data[i], data[min_idx]);</text>
+  <text x="50" y="252" fill="#6c7086" font-size="11" font-family="Consolas, monospace">// min_idx=3, swap data[1],data[3]</text>
 
   <!-- Sorted/unsorted labels -->
-  <rect x="100" y="64" width="68" height="20" rx="3" fill="#d5f5e3"/>
-  <text x="134" y="78" text-anchor="middle" fill="#27ae60" font-size="11" font-weight="bold">sorted</text>
-  <rect x="168" y="64" width="408" height="20" rx="3" fill="#fadbd8"/>
-  <text x="372" y="78" text-anchor="middle" fill="#e74c3c" font-size="11" font-weight="bold">unsorted region -- scan for minimum</text>
+  <rect x="400" y="64" width="60" height="18" rx="3" fill="#d5f5e3"/>
+  <text x="430" y="77" text-anchor="middle" fill="#27ae60" font-size="10" font-weight="bold">sorted</text>
+  <rect x="460" y="64" width="320" height="18" rx="3" fill="#fadbd8"/>
+  <text x="620" y="77" text-anchor="middle" fill="#e74c3c" font-size="10" font-weight="bold">unsorted region (scan for min)</text>
 
-  <!-- Before: [55 | 78, 95, 62, 88, 73] -->
-  <text x="40" y="108" fill="#888" font-size="12" font-weight="bold">Before:</text>
-  <rect x="100" y="90" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="130" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
-  <rect x="168" y="90" width="60" height="36" rx="4" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
-  <text x="198" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
-  <rect x="236" y="90" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="266" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
-  <rect x="304" y="90" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="334" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
-  <rect x="372" y="90" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="402" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">88</text>
-  <rect x="440" y="90" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="470" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">73</text>
-  <text x="560" y="100" fill="#e67e22" font-size="12">i = 1 (first unsorted position)</text>
-  <text x="560" y="116" fill="#e67e22" font-size="12">data[i] = 78</text>
+  <!-- Step 1: Before -->
+  <rect x="390" y="86" width="500" height="48" rx="6" fill="#eaf4fb" stroke="#5dade2" stroke-width="1.5"/>
+  <text x="400" y="104" fill="#2980b9" font-size="11" font-weight="bold">Step 1: min_idx = i = 1 (assume 78 is the min)</text>
+  <rect x="400" y="108" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="421" y="124" text-anchor="middle" fill="#fff" font-size="11">55</text>
+  <rect x="448" y="108" width="42" height="22" rx="3" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
+  <text x="469" y="124" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">78</text>
+  <rect x="496" y="108" width="42" height="22" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="517" y="124" text-anchor="middle" fill="#fff" font-size="11">95</text>
+  <rect x="544" y="108" width="42" height="22" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="565" y="124" text-anchor="middle" fill="#fff" font-size="11">62</text>
+  <rect x="592" y="108" width="42" height="22" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="613" y="124" text-anchor="middle" fill="#fff" font-size="11">88</text>
+  <rect x="640" y="108" width="42" height="22" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="661" y="124" text-anchor="middle" fill="#fff" font-size="11">73</text>
+  <text x="700" y="118" fill="#e67e22" font-size="11" font-weight="bold">min_idx = 1</text>
 
-  <!-- Scanning: find min = 62 at index 3 -->
-  <text x="40" y="168" fill="#888" font-size="12">Scan:</text>
-  <rect x="100" y="150" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="130" y="173" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
-  <rect x="168" y="150" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="198" y="173" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
-  <rect x="236" y="150" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="266" y="173" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
-  <rect x="304" y="150" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2.5"/>
-  <text x="334" y="173" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
-  <rect x="372" y="150" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="402" y="173" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">88</text>
-  <rect x="440" y="150" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="470" y="173" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">73</text>
-  <text x="560" y="162" fill="#e74c3c" font-size="12" font-weight="bold">min found: 62 at index 3</text>
-  <text x="560" y="178" fill="#e74c3c" font-size="12">Scanned all 5 unsorted elements</text>
+  <!-- Step 2: Scanning -->
+  <rect x="390" y="140" width="500" height="108" rx="6" fill="#fef9e7" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="400" y="158" fill="#e67e22" font-size="11" font-weight="bold">Step 2: scan j = 2..5, update min_idx when data[j] &lt; data[min_idx]</text>
 
-  <!-- After: swap 78 and 62 -->
-  <text x="40" y="228" fill="#888" font-size="12" font-weight="bold">After:</text>
-  <rect x="100" y="210" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="130" y="233" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
-  <rect x="168" y="210" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
-  <text x="198" y="233" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
-  <rect x="236" y="210" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="266" y="233" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
-  <rect x="304" y="210" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="334" y="233" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
-  <rect x="372" y="210" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="402" y="233" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">88</text>
-  <rect x="440" y="210" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="470" y="233" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">73</text>
-  <text x="560" y="222" fill="#27ae60" font-size="12" font-weight="bold">swap(data[1], data[3])</text>
-  <text x="560" y="238" fill="#27ae60" font-size="12">62 is now in its final position</text>
+  <text x="406" y="178" fill="#888" font-size="11">j=2:</text>
+  <text x="440" y="178" fill="#555" font-size="11">data[2]=95 &lt; data[1]=78?</text>
+  <text x="640" y="178" fill="#888" font-size="11">No.  min_idx stays 1</text>
+
+  <text x="406" y="196" fill="#888" font-size="11">j=3:</text>
+  <text x="440" y="196" fill="#e74c3c" font-size="11" font-weight="bold">data[3]=62 &lt; data[1]=78?</text>
+  <text x="640" y="196" fill="#e74c3c" font-size="11" font-weight="bold">Yes! min_idx = 3</text>
+
+  <text x="406" y="214" fill="#888" font-size="11">j=4:</text>
+  <text x="440" y="214" fill="#555" font-size="11">data[4]=88 &lt; data[3]=62?</text>
+  <text x="640" y="214" fill="#888" font-size="11">No.  min_idx stays 3</text>
+
+  <text x="406" y="232" fill="#888" font-size="11">j=5:</text>
+  <text x="440" y="232" fill="#555" font-size="11">data[5]=73 &lt; data[3]=62?</text>
+  <text x="640" y="232" fill="#888" font-size="11">No.  min_idx stays 3</text>
+
+  <!-- Step 3: Swap -->
+  <rect x="390" y="254" width="500" height="60" rx="6" fill="#e8f5e9" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="400" y="272" fill="#1b5e20" font-size="11" font-weight="bold">Step 3: min_idx (3) != i (1), so swap(data[1], data[3])</text>
+  <rect x="400" y="280" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="421" y="296" text-anchor="middle" fill="#fff" font-size="11">55</text>
+  <rect x="448" y="280" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="469" y="296" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">62</text>
+  <rect x="496" y="280" width="42" height="22" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="517" y="296" text-anchor="middle" fill="#fff" font-size="11">95</text>
+  <rect x="544" y="280" width="42" height="22" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="565" y="296" text-anchor="middle" fill="#fff" font-size="11">78</text>
+  <rect x="592" y="280" width="42" height="22" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="613" y="296" text-anchor="middle" fill="#fff" font-size="11">88</text>
+  <rect x="640" y="280" width="42" height="22" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="661" y="296" text-anchor="middle" fill="#fff" font-size="11">73</text>
+  <text x="700" y="290" fill="#27ae60" font-size="11" font-weight="bold">sorted: [55, 62]</text>
 
   <!-- Footer -->
-  <rect x="30" y="262" width="800" height="60" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
-  <text x="430" y="282" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">Selection sort: always scans the FULL unsorted region -- no shortcuts, always O(n^2)</text>
-  <text x="430" y="300" text-anchor="middle" fill="#555" font-size="12">Only n-1 total swaps (one per pass) -- fewer writes than bubble sort</text>
-  <text x="430" y="316" text-anchor="middle" fill="#e74c3c" font-size="12">NOT stable: swapping 78 and 62 might reorder equal elements between them</text>
+  <rect x="30" y="330" width="860" height="80" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="460" y="350" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">Always O(n^2): must scan the FULL unsorted region every pass, no early exit possible</text>
+  <text x="460" y="370" text-anchor="middle" fill="#555" font-size="12">Only n-1 total swaps (one per pass): fewest writes of any quadratic sort</text>
+  <text x="460" y="390" text-anchor="middle" fill="#e74c3c" font-size="12">NOT stable: swapping data[1] and data[3] jumped over elements between them</text>
+  <text x="460" y="406" text-anchor="middle" fill="#555" font-size="12">if min_idx == i, no swap needed (element is already in the right spot)</text>
 </svg>

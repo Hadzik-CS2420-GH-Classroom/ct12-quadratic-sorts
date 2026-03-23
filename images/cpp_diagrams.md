@@ -58,3 +58,10 @@ Each diagram shows the code on the left and the array state on the right (CT11 s
 *`QuadraticSorts.cpp::selection_sort()` -- detailed step-by-step of scanning and swapping*
 
 ![Selection Sort -- Find Minimum, Swap to Front](svgs/selection_sort_step.svg)
+
+---
+
+## 9. Why Selection Sort Is NOT Stable
+*`QuadraticSorts.cpp::selection_sort()` -- swapping distant elements can reorder equals: [3a, 3b, 1, 2] becomes [1, 3b, 3a, 2]*
+
+![Why Selection Sort Is NOT Stable](svgs/selection_sort_unstable.svg)

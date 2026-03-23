@@ -1,80 +1,103 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 380" font-family="'Segoe UI', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" font-family="'Segoe UI', Arial, sans-serif">
   <rect width="100%" height="100%" fill="white"/>
-  <defs>
-    <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#8e44ad"/>
-    </marker>
-  </defs>
 
   <!-- Title -->
-  <text x="430" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Insertion Sort -- Inserting One Element</text>
-  <text x="430" y="50" text-anchor="middle" fill="#555" font-size="13">Save the key, shift larger elements right, place the key in its sorted position</text>
+  <text x="460" y="30" text-anchor="middle" fill="#1a1a1a" font-size="26" font-weight="bold">Insertion Sort -- Inserting One Element</text>
+  <text x="460" y="50" text-anchor="middle" fill="#555" font-size="13">Walking through i=3: key=62 must be inserted into the sorted region [55, 78, 95]</text>
+
+  <!-- Code box (left) -->
+  <rect x="30" y="62" width="340" height="200" rx="8" fill="#1e1e2e" stroke="#45475a" stroke-width="1.5"/>
+
+  <!-- Step highlight bands -->
+  <rect x="30" y="82"  width="340" height="36" fill="#89b4fa18"/>
+  <rect x="30" y="118" width="340" height="54" fill="#f38ba818"/>
+  <rect x="30" y="188" width="340" height="18" fill="#a6e3a118"/>
+
+  <!-- Code (x offsets: 50=L0, 66=L1, 82=L2) -->
+  <text x="50" y="80"  fill="#6c7086" font-size="11" font-family="Consolas, monospace">// i = 3 this iteration</text>
+  <text x="50" y="98"  fill="#89b4fa" font-size="12" font-family="Consolas, monospace">Step 1:</text>
+  <text x="50" y="114" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">int</tspan> key = data[3]; <tspan fill="#6c7086">// 62</tspan></text>
+  <text x="50" y="132" fill="#f38ba8" font-size="12" font-family="Consolas, monospace">Step 2:</text>
+  <text x="50" y="148" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace"><tspan fill="#cba6f7">while</tspan> (shift_pos&gt;=0 &amp;&amp; data[shift_pos]&gt;key)</text>
+  <text x="66" y="164" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">data[shift_pos+1] = data[shift_pos];</text>
+  <text x="66" y="180" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">--shift_pos;</text>
+  <text x="50" y="200" fill="#a6e3a1" font-size="12" font-family="Consolas, monospace">Step 3:</text>
+  <text x="50" y="216" fill="#cdd6f4" font-size="12" font-family="Consolas, monospace">data[shift_pos+1] = key; <tspan fill="#6c7086">// place 62</tspan></text>
+  <text x="50" y="242" fill="#6c7086" font-size="11" font-family="Consolas, monospace">// shift_pos=0, data[1] = 62</text>
 
   <!-- Sorted/unsorted labels -->
-  <rect x="100" y="64" width="204" height="20" rx="3" fill="#d5f5e3"/>
-  <text x="202" y="78" text-anchor="middle" fill="#27ae60" font-size="11" font-weight="bold">sorted region</text>
-  <rect x="304" y="64" width="272" height="20" rx="3" fill="#fadbd8"/>
-  <text x="440" y="78" text-anchor="middle" fill="#e74c3c" font-size="11" font-weight="bold">unsorted region</text>
+  <rect x="400" y="64" width="180" height="18" rx="3" fill="#d5f5e3"/>
+  <text x="490" y="77" text-anchor="middle" fill="#27ae60" font-size="10" font-weight="bold">sorted region (0..2)</text>
+  <rect x="580" y="64" width="200" height="18" rx="3" fill="#fadbd8"/>
+  <text x="680" y="77" text-anchor="middle" fill="#e74c3c" font-size="10" font-weight="bold">unsorted (3..5)</text>
 
-  <!-- Step 1: Before, key = 62 -->
-  <text x="40" y="108" fill="#888" font-size="12" font-weight="bold">Before:</text>
-  <rect x="100" y="90" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="130" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
-  <rect x="168" y="90" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="198" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
-  <rect x="236" y="90" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="266" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
-  <rect x="304" y="90" width="60" height="36" rx="4" fill="#8e44ad" stroke="#6c3483" stroke-width="2.5"/>
-  <text x="334" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
-  <rect x="372" y="90" width="60" height="36" rx="4" fill="#bdc3c7" stroke="#95a5a6" stroke-width="1.5"/>
-  <text x="402" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">88</text>
-  <rect x="440" y="90" width="60" height="36" rx="4" fill="#bdc3c7" stroke="#95a5a6" stroke-width="1.5"/>
-  <text x="470" y="113" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">73</text>
+  <!-- Step 1: Before -->
+  <rect x="390" y="86" width="500" height="48" rx="6" fill="#eaf4fb" stroke="#5dade2" stroke-width="1.5"/>
+  <text x="400" y="104" fill="#2980b9" font-size="11" font-weight="bold">Step 1: key = data[3] = 62, shift_pos = 2</text>
+  <rect x="400" y="108" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="421" y="124" text-anchor="middle" fill="#fff" font-size="11">55</text>
+  <rect x="448" y="108" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="469" y="124" text-anchor="middle" fill="#fff" font-size="11">78</text>
+  <rect x="496" y="108" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="517" y="124" text-anchor="middle" fill="#fff" font-size="11">95</text>
+  <rect x="544" y="108" width="42" height="22" rx="3" fill="#8e44ad" stroke="#6c3483" stroke-width="2"/>
+  <text x="565" y="124" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">62</text>
+  <rect x="592" y="108" width="42" height="22" rx="3" fill="#bdc3c7" stroke="#95a5a6" stroke-width="1"/>
+  <text x="613" y="124" text-anchor="middle" fill="#fff" font-size="11">88</text>
+  <rect x="640" y="108" width="42" height="22" rx="3" fill="#bdc3c7" stroke="#95a5a6" stroke-width="1"/>
+  <text x="661" y="124" text-anchor="middle" fill="#fff" font-size="11">73</text>
+  <text x="700" y="118" fill="#8e44ad" font-size="11" font-weight="bold">key = 62</text>
 
-  <!-- Key extracted -->
-  <text x="550" y="100" fill="#8e44ad" font-size="13" font-weight="bold">key = 62</text>
-  <text x="550" y="116" fill="#8e44ad" font-size="11">(saved before shifting)</text>
+  <!-- Step 2a: j=2, shift 95 -->
+  <rect x="390" y="140" width="500" height="48" rx="6" fill="#fef9e7" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="400" y="158" fill="#e67e22" font-size="11" font-weight="bold">Step 2: shift_pos=2, data[2]=95 &gt; 62? Yes, shift right</text>
+  <rect x="400" y="162" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="421" y="178" text-anchor="middle" fill="#fff" font-size="11">55</text>
+  <rect x="448" y="162" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="469" y="178" text-anchor="middle" fill="#fff" font-size="11">78</text>
+  <rect x="496" y="162" width="42" height="22" rx="3" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="517" y="178" text-anchor="middle" fill="#bbb" font-size="10">gap</text>
+  <rect x="544" y="162" width="42" height="22" rx="3" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="565" y="178" text-anchor="middle" fill="#fff" font-size="11">95</text>
+  <text x="700" y="172" fill="#e74c3c" font-size="11">data[3]=data[2]</text>
 
-  <!-- Step 2: Shift 95 right -->
-  <text x="40" y="170" fill="#888" font-size="12">Shift 1:</text>
-  <rect x="100" y="152" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="130" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
-  <rect x="168" y="152" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="198" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
-  <rect x="236" y="152" width="60" height="36" rx="4" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="266" y="175" text-anchor="middle" fill="#bbb" font-size="14" font-style="italic">gap</text>
-  <rect x="304" y="152" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-  <text x="334" y="175" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
-  <text x="550" y="170" fill="#e74c3c" font-size="12">95 &gt; 62 -- shift right</text>
+  <!-- Step 2b: j=1, shift 78 -->
+  <rect x="390" y="194" width="500" height="48" rx="6" fill="#fef9e7" stroke="#e67e22" stroke-width="1.5"/>
+  <text x="400" y="212" fill="#e67e22" font-size="11" font-weight="bold">Step 2: shift_pos=1, data[1]=78 &gt; 62? Yes, shift right</text>
+  <rect x="400" y="216" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="421" y="232" text-anchor="middle" fill="#fff" font-size="11">55</text>
+  <rect x="448" y="216" width="42" height="22" rx="3" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="469" y="232" text-anchor="middle" fill="#bbb" font-size="10">gap</text>
+  <rect x="496" y="216" width="42" height="22" rx="3" fill="#e74c3c" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="517" y="232" text-anchor="middle" fill="#fff" font-size="11">78</text>
+  <rect x="544" y="216" width="42" height="22" rx="3" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="565" y="232" text-anchor="middle" fill="#fff" font-size="11">95</text>
+  <text x="700" y="226" fill="#e74c3c" font-size="11">data[2]=data[1]</text>
 
-  <!-- Step 3: Shift 78 right -->
-  <text x="40" y="222" fill="#888" font-size="12">Shift 2:</text>
-  <rect x="100" y="204" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="130" y="227" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
-  <rect x="168" y="204" width="60" height="36" rx="4" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="198" y="227" text-anchor="middle" fill="#bbb" font-size="14" font-style="italic">gap</text>
-  <rect x="236" y="204" width="60" height="36" rx="4" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-  <text x="266" y="227" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
-  <rect x="304" y="204" width="60" height="36" rx="4" fill="#3498db" stroke="#2980b9" stroke-width="1.5"/>
-  <text x="334" y="227" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
-  <text x="550" y="222" fill="#e74c3c" font-size="12">78 &gt; 62 -- shift right</text>
+  <!-- Step 2c: j=0, 55 < 62, stop -->
+  <rect x="390" y="248" width="500" height="32" rx="6" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.5"/>
+  <text x="400" y="268" fill="#8e44ad" font-size="11" font-weight="bold">Step 2: shift_pos=0, data[0]=55 &gt; 62? No! Stop. shift_pos stays at 0.</text>
 
-  <!-- Step 4: Place key -->
-  <text x="40" y="274" fill="#888" font-size="12">Place:</text>
-  <rect x="100" y="256" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="130" y="279" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">55</text>
-  <rect x="168" y="256" width="60" height="36" rx="4" fill="#8e44ad" stroke="#6c3483" stroke-width="2.5"/>
-  <text x="198" y="279" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">62</text>
-  <rect x="236" y="256" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="266" y="279" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">78</text>
-  <rect x="304" y="256" width="60" height="36" rx="4" fill="#2ecc71" stroke="#27ae60" stroke-width="1.5"/>
-  <text x="334" y="279" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">95</text>
-  <text x="550" y="270" fill="#8e44ad" font-size="12" font-weight="bold">55 &lt; 62 -- stop shifting</text>
-  <text x="550" y="286" fill="#8e44ad" font-size="12">Place key at data[j+1]</text>
+  <!-- Step 3: Place key -->
+  <rect x="390" y="286" width="500" height="48" rx="6" fill="#e8f5e9" stroke="#27ae60" stroke-width="1.5"/>
+  <text x="400" y="304" fill="#1b5e20" font-size="11" font-weight="bold">Step 3: data[shift_pos+1] = data[1] = key = 62</text>
+  <rect x="400" y="308" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="421" y="324" text-anchor="middle" fill="#fff" font-size="11">55</text>
+  <rect x="448" y="308" width="42" height="22" rx="3" fill="#8e44ad" stroke="#6c3483" stroke-width="2"/>
+  <text x="469" y="324" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">62</text>
+  <rect x="496" y="308" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="517" y="324" text-anchor="middle" fill="#fff" font-size="11">78</text>
+  <rect x="544" y="308" width="42" height="22" rx="3" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+  <text x="565" y="324" text-anchor="middle" fill="#fff" font-size="11">95</text>
+  <rect x="592" y="308" width="42" height="22" rx="3" fill="#bdc3c7" stroke="#95a5a6" stroke-width="1"/>
+  <text x="613" y="324" text-anchor="middle" fill="#fff" font-size="11">88</text>
+  <rect x="640" y="308" width="42" height="22" rx="3" fill="#bdc3c7" stroke="#95a5a6" stroke-width="1"/>
+  <text x="661" y="324" text-anchor="middle" fill="#fff" font-size="11">73</text>
+  <text x="700" y="318" fill="#27ae60" font-size="11" font-weight="bold">sorted: [55,62,78,95]</text>
 
   <!-- Footer -->
-  <rect x="30" y="310" width="800" height="60" rx="8" fill="#f4ecf7" stroke="#8e44ad" stroke-width="1.5"/>
-  <text x="430" y="330" text-anchor="middle" fill="#6c3483" font-size="13" font-weight="bold">Insertion sort: save the key, shift everything larger one position right, place the key</text>
-  <text x="430" y="348" text-anchor="middle" fill="#7d3c98" font-size="12">Worst case: key is smallest -- shifts ALL elements (happens when array is reverse-sorted)</text>
-  <text x="430" y="363" text-anchor="middle" fill="#7d3c98" font-size="12">Best case: key is already in position -- zero shifts (happens when array is already sorted)</text>
+  <rect x="30" y="350" width="860" height="60" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1.5"/>
+  <text x="460" y="370" text-anchor="middle" fill="#333" font-size="13" font-weight="bold">The while loop is the engine: shift right until data[shift_pos] &lt;= key or shift_pos goes below 0</text>
+  <text x="460" y="388" text-anchor="middle" fill="#555" font-size="12">Worst case (key is smallest): shifts every sorted element = O(n) per insertion = O(n^2) total</text>
+  <text x="460" y="404" text-anchor="middle" fill="#555" font-size="12">Best case (key is largest): zero shifts, while loop exits immediately = O(1) per insertion = O(n) total</text>
 </svg>
