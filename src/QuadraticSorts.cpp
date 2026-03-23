@@ -29,12 +29,16 @@
 void bubble_sort(std::vector<int>& data) {
     int n = static_cast<int>(data.size());
 
-    // TODO 1: Implement bubble sort
-    //   - Outer loop: i from 0 to n-2 (each pass settles one more element)
-    //   - Create a bool 'swapped' flag, set to false at the start of each pass
-    //   - Inner loop: j from 0 to n-1-i (skip the settled tail)
-    //     - If data[j] > data[j+1], swap them and set swapped = true
-    //   - After the inner loop: if !swapped, break (early exit -- already sorted)
+    for (int i = 0; i < n - 1; ++i) {
+        bool swapped = false;
+        for (int j = 0; j < n - 1 - i; ++j) {
+            if (data[j] > data[j + 1]) {
+                std::swap(data[j], data[j + 1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) break;
+    }
 }
 
 // ---------------------------------------------------------------------------
@@ -59,19 +63,18 @@ void insertion_sort(std::vector<int>& data) {
     int n = static_cast<int>(data.size());  // ? size() returns size_t (unsigned) -- cast to int so shift_pos can go negative
 
     for (int i = 1; i < n; ++i) {
-        // TODO 2: Implement insertion sort (Steps 1-3)
-        //
         // Step 1: save the current element and start at end of sorted region
-        //   - int key = data[i];
-        //   - int shift_pos = i - 1;
-        //
+        int key = data[i];
+        int shift_pos = i - 1;
+
         // Step 2: shift elements > key one position right
-        //   - while (shift_pos >= 0 && data[shift_pos] > key)
-        //       data[shift_pos + 1] = data[shift_pos];
-        //       --shift_pos;
-        //
+        while (shift_pos >= 0 && data[shift_pos] > key) {
+            data[shift_pos + 1] = data[shift_pos];
+            --shift_pos;
+        }
+
         // Step 3: place key in the gap
-        //   - data[shift_pos + 1] = key;
+        data[shift_pos + 1] = key;
     }
 }
 
@@ -92,11 +95,15 @@ void selection_sort(std::vector<int>& data) {
     int n = static_cast<int>(data.size());
 
     for (int i = 0; i < n - 1; ++i) {
-        // TODO 3: Implement selection sort
-        //   - int min_idx = i;  (assume data[i] is the minimum)
-        //   - Inner loop: j from i+1 to n-1
-        //     - If data[j] < data[min_idx], update min_idx = j
-        //   - After the inner loop: if min_idx != i, swap(data[i], data[min_idx])
+        int min_idx = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (data[j] < data[min_idx]) {
+                min_idx = j;
+            }
+        }
+        if (min_idx != i) {
+            std::swap(data[i], data[min_idx]);
+        }
     }
 }
 
