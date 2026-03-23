@@ -1,0 +1,247 @@
+<!-- Canvas LMS HTML Fragment -- paste into the Rich Content Editor (HTML view) -->
+
+<h2>&#x1F468;&#x200D;&#x1F4BB; Code-Together 12: O(n&#xB2;) Sorting Algorithms</h2>
+
+<h3>&#x1F3AF; Overview</h3>
+<p>An in-class code-together activity introducing <strong>quadratic sorting algorithms</strong> &mdash; bubble sort, insertion sort, and selection sort. Students implement all three algorithms in <code>QuadraticSorts.cpp</code> and call them from <code>main.cpp</code> to sort exam scores. The activity covers nested-loop patterns, best/worst case analysis, stability, and why insertion sort is the practical winner among O(n&#xB2;) sorts.</p>
+
+<h3>&#x1F4D6; Learning Objectives</h3>
+<p>By completing this activity, you will be able to:</p>
+<ul>
+    <li>Implement <strong>bubble sort</strong> with the early-exit optimization (no swaps = already sorted)</li>
+    <li>Implement <strong>insertion sort</strong> using the shift-right pattern to insert each element into the sorted region</li>
+    <li>Implement <strong>selection sort</strong> by finding the minimum and swapping to the front</li>
+    <li>Explain why all three are <strong>O(n&#xB2;)</strong> average case (nested loops over n elements)</li>
+    <li>Explain why insertion sort and bubble sort have <strong>O(n) best case</strong> but selection sort does not</li>
+    <li>Explain <strong>stability</strong>: bubble and insertion sort are stable; selection sort is not</li>
+</ul>
+
+<h3>&#x1F680; Getting Started</h3>
+
+<h4>Step 1: Accept the Assignment</h4>
+<p>Click the button below to create your personal repository:</p>
+<p><a style="display: inline-block; padding: 10px 24px; font-size: 1em; font-weight: 600; color: #fff; background-color: #0b874b; border-radius: 4px; text-decoration: none;" href="https://classroom.github.com/a/DxeBkWP9" target="_blank" rel="noopener">Accept Assignment on GitHub</a></p>
+
+<div style="padding: 14px 18px; border-radius: 4px; margin-bottom: 16px; background-color: #fcf8e3; border: 1px solid #faebcc; color: #8a6d3b;">
+    <strong>Repository Access Issue?</strong><br />
+    If you don&#x2019;t see the repository after accepting, check your email for the GitHub invite.
+</div>
+
+<h4>Step 2: Clone in Visual Studio</h4>
+<ol>
+    <li>Open <strong>Visual Studio</strong></li>
+    <li>On the start window, click <strong>&#x201C;Clone a repository&#x201D;</strong></li>
+    <li>Paste your repository URL (from GitHub) into the <strong>Repository location</strong> field</li>
+    <li>Choose a local path and click <strong>Clone</strong></li>
+    <li>Visual Studio should automatically detect the CMake project and configure it</li>
+</ol>
+
+<div style="padding: 14px 18px; border-radius: 4px; margin-bottom: 16px; background-color: #d9edf7; border: 1px solid #bce8f1; color: #31708f;">
+    Follow the <strong>Troubleshooting</strong> section at the bottom if CMake does not configure automatically.
+</div>
+
+<h4>Step 3: Wait for CMake Configuration</h4>
+<p>Visual Studio will automatically run CMake. Watch the <strong>Output</strong> window (<em>View &rarr; Output</em>, select <em>&#x201C;Show output from: CMake&#x201D;</em>) until you see:</p>
+<pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 16px 20px; border-radius: 4px; overflow-x: auto; font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace; font-size: 0.875em; line-height: 1.6;">CMake generation finished.</pre>
+
+<h3>&#x1F4DD; What You&#x2019;ll Do</h3>
+<p>Open <code>QuadraticSorts.cpp</code> and complete the <code>TODO</code> comments. Each TODO tells you what to write, and the <strong>DISCUSSION</strong> comments explain the &#x201C;why&#x201D; behind the code. We&#x2019;ll work through these together in class.</p>
+
+<h3>&#x1F4DA; Teaching Order</h3>
+<p>Work through the files in order:</p>
+
+<h4>1. <code>QuadraticSorts.h</code> &mdash; Function declarations</h4>
+<p>Walk through the header. Discuss why these are free functions (not class methods) and the Big-O annotations.</p>
+<table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; text-align: left; background-color: #f5f5f5; font-weight: 700;">Section</th>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; text-align: left; background-color: #f5f5f5; font-weight: 700;">What You&#x2019;ll Learn</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>bubble_sort()</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Adjacent-swap pattern; O(n&#xB2;) avg/worst, O(n) best with early exit; stable</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>insertion_sort()</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Shift-right pattern; O(n&#xB2;) avg/worst, O(n) best; stable; used as base case in std::sort</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>selection_sort()</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Find-min-and-swap pattern; O(n&#xB2;) always; NOT stable; fewest writes (n-1 swaps)</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>2. <code>QuadraticSorts.cpp</code> &mdash; Sort implementations (3 TODOs)</h4>
+<table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; text-align: left; background-color: #f5f5f5; font-weight: 700;">Section</th>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; text-align: left; background-color: #f5f5f5; font-weight: 700;">What You&#x2019;ll Learn</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">TODO 1: <code>bubble_sort()</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Outer loop (passes), inner loop (adjacent comparisons), <code>swapped</code> flag for early exit, <code>n-1-i</code> shrinking range</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">TODO 2: <code>insertion_sort()</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Step 1: save key. Step 2: shift elements &gt; key right. Step 3: place key in the gap. Uses <code>shift_pos</code> to scan backward.</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">TODO 3: <code>selection_sort()</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Track <code>min_idx</code>, scan unsorted region, swap min into position. Always scans full range (no shortcut).</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>3. <code>main.cpp</code> &mdash; Exam Score Sorter (provided)</h4>
+<table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; text-align: left; background-color: #f5f5f5; font-weight: 700;">Section</th>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; text-align: left; background-color: #f5f5f5; font-weight: 700;">What You&#x2019;ll Learn</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Bubble sort demo</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Sort exam scores with bubble sort; observe the before/after output</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Insertion sort demo</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Same scores, different algorithm; same result, different internal process</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Selection sort demo</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Same scores, third algorithm; fewest swaps but always O(n&#xB2;)</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Already-sorted input</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Best-case demonstration: bubble/insertion finish fast; selection still scans everything</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>&#x1F5BC;&#xFE0F; Diagrams</h3>
+<p>Diagrams are included in the <code>images/</code> folder and referenced in the source code comments. These help visualize what&#x2019;s happening:</p>
+<table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; text-align: left; background-color: #f5f5f5; font-weight: 700;">Diagram</th>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; text-align: left; background-color: #f5f5f5; font-weight: 700;">Shows</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>why_sort_data</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Why sorting matters and where it shows up in real systems</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>quadratic_sorts_overview</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">The three quadratic sorts at a glance: mechanism, best/worst, stability</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>nested_loops_quadratic</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Why nested loops = O(n&#xB2;): math breakdown and growth curve</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>bubble_sort_complete</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Full walkthrough on [5, 2, 8, 1, 4] showing every pass and early exit</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>bubble_sort_shrinking_range</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Why <code>j &lt; n-1-i</code>: each pass settles one more element, unsorted region shrinks</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>insertion_sort_complete</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Full walkthrough on [5, 2, 8, 1, 4] showing shifts for each insertion</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>selection_sort_complete</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Full walkthrough on [5, 2, 8, 1, 4] showing min-find and swap each pass</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>selection_sort_unstable</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Why selection sort is NOT stable: [3a, 3b, 1] swap teleports 3a past 3b</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>when_to_use_which_sort</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Practical guidance: insertion for small/nearly-sorted, selection for few writes, bubble for learning</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;"><code>quadratic_sorts_comparison</code></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Side-by-side table: best/avg case, space, stability for all three sorts</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>&#x1F4CA; Grading (30 points)</h3>
+<p>Your code is auto-graded by GitHub Classroom when you push. Tests check that each TODO produces the correct output.</p>
+<table style="width: 100%; border-collapse: collapse; margin-bottom: 16px;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; background-color: #f5f5f5; font-weight: 700;">Category</th>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; background-color: #f5f5f5; font-weight: 700;">Points</th>
+            <th style="border: 1px solid #c7cdd1; padding: 10px 14px; background-color: #f5f5f5; font-weight: 700;">What is tested</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Build</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">2</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Project compiles without errors</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Bubble Sort</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">10</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Basic, already sorted, reverse sorted, duplicates, edge cases (empty/single)</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Insertion Sort</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">10</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Basic, already sorted, reverse sorted, duplicates, edge cases (empty/single)</td>
+        </tr>
+        <tr style="background-color: #fafafa;">
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Selection Sort</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">8</td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px;">Basic, already sorted, reverse sorted, duplicates</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px; font-weight: 700; background-color: #f5f5f5;"><strong>Total</strong></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px; font-weight: 700; background-color: #f5f5f5;"><strong>30</strong></td>
+            <td style="border: 1px solid #c7cdd1; padding: 10px 14px; background-color: #f5f5f5;"></td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>&#x1F527; Troubleshooting</h3>
+
+<h4>CMake does not configure automatically</h4>
+<ol>
+    <li>Make sure you have <strong>Desktop development with C++</strong> workload installed in Visual Studio</li>
+    <li>Go to <em>Project &rarr; CMake Settings</em> and ensure the configuration is correct</li>
+    <li>Try <em>Project &rarr; Delete Cache and Reconfigure</em></li>
+    <li>Verify that <code>CMakeLists.txt</code> is in the root of your cloned repository</li>
+</ol>
+
+<h4>Tests fail to build</h4>
+<ul>
+    <li>Google Test is fetched automatically via CMake&#x2019;s <code>FetchContent</code> &mdash; make sure you have an internet connection during the first build</li>
+    <li>Do <strong>not</strong> modify header files in the <code>include/</code> folder</li>
+</ul>
+
+<h4>Running the Program</h4>
+<ol>
+    <li>In Visual Studio, select <code>ct12-quadratic-sorts.exe</code> as the startup item from the dropdown</li>
+    <li>Press <strong>Ctrl+F5</strong> to run without debugging</li>
+    <li>You should see output from each section as you complete the TODOs</li>
+</ol>
+
+<div style="padding: 14px 18px; border-radius: 4px; margin-bottom: 16px; background-color: #dff0d8; border: 1px solid #d6e9c6; color: #3c763d;">
+    <strong>Tip:</strong> Look for the <code>// ! DISCUSSION:</code> comments in each file &mdash; these explain the &#x201C;why&#x201D; behind each concept. The <code>// ? SEE DIAGRAM:</code> comments point you to visual aids in the <code>images/</code> folder.
+</div>
