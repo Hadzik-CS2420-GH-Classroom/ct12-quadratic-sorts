@@ -1,0 +1,275 @@
+name: Autograding Tests
+on:
+  - push
+  - repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build Project
+      continue-on-error: true
+      run: |
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+        cmake --build build --config Release
+
+    - name: Build Check (2 points)
+      id: build
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Build Check (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            echo "Build successful"
+          else
+            echo "Build failed" && exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    # ==================== Bubble Sort Tests (10 points) ====================
+
+    - name: Bubble Sort Basic (2 points)
+      id: bubble-basic
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Bubble Sort Basic (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=BubbleSort.BasicSort
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Bubble Sort Already Sorted (2 points)
+      id: bubble-sorted
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Bubble Sort Already Sorted (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=BubbleSort.AlreadySorted
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Bubble Sort Reverse Sorted (2 points)
+      id: bubble-reverse
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Bubble Sort Reverse Sorted (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=BubbleSort.ReverseSorted
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Bubble Sort Duplicates (2 points)
+      id: bubble-duplicates
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Bubble Sort Duplicates (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=BubbleSort.Duplicates
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Bubble Sort Edge Cases (2 points)
+      id: bubble-edge
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Bubble Sort Edge Cases (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=BubbleSort.SingleElement:BubbleSort.EmptyVector
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    # ==================== Insertion Sort Tests (10 points) ====================
+
+    - name: Insertion Sort Basic (2 points)
+      id: insertion-basic
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Insertion Sort Basic (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=InsertionSort.BasicSort
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Insertion Sort Already Sorted (2 points)
+      id: insertion-sorted
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Insertion Sort Already Sorted (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=InsertionSort.AlreadySorted
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Insertion Sort Reverse Sorted (2 points)
+      id: insertion-reverse
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Insertion Sort Reverse Sorted (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=InsertionSort.ReverseSorted
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Insertion Sort Duplicates (2 points)
+      id: insertion-duplicates
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Insertion Sort Duplicates (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=InsertionSort.Duplicates
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Insertion Sort Edge Cases (2 points)
+      id: insertion-edge
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Insertion Sort Edge Cases (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=InsertionSort.SingleElement:InsertionSort.EmptyVector
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    # ==================== Selection Sort Tests (8 points) ====================
+
+    - name: Selection Sort Basic (2 points)
+      id: selection-basic
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Selection Sort Basic (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=SelectionSort.BasicSort
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Selection Sort Already Sorted (2 points)
+      id: selection-sorted
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Selection Sort Already Sorted (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=SelectionSort.AlreadySorted
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Selection Sort Reverse Sorted (2 points)
+      id: selection-reverse
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Selection Sort Reverse Sorted (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=SelectionSort.ReverseSorted
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Selection Sort Duplicates (2 points)
+      id: selection-duplicates
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Selection Sort Duplicates (2 points)
+        setup-command: ''
+        command: |
+          if [ -f build/run_tests ]; then
+            cd build && ./run_tests --gtest_filter=SelectionSort.Duplicates
+          else
+            exit 1
+          fi
+        timeout: 10
+        max-score: 2
+
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        BUILD_RESULTS:                "${{steps.build.outputs.result}}"
+        BUBBLE-BASIC_RESULTS:         "${{steps.bubble-basic.outputs.result}}"
+        BUBBLE-SORTED_RESULTS:        "${{steps.bubble-sorted.outputs.result}}"
+        BUBBLE-REVERSE_RESULTS:       "${{steps.bubble-reverse.outputs.result}}"
+        BUBBLE-DUPLICATES_RESULTS:    "${{steps.bubble-duplicates.outputs.result}}"
+        BUBBLE-EDGE_RESULTS:          "${{steps.bubble-edge.outputs.result}}"
+        INSERTION-BASIC_RESULTS:      "${{steps.insertion-basic.outputs.result}}"
+        INSERTION-SORTED_RESULTS:     "${{steps.insertion-sorted.outputs.result}}"
+        INSERTION-REVERSE_RESULTS:    "${{steps.insertion-reverse.outputs.result}}"
+        INSERTION-DUPLICATES_RESULTS: "${{steps.insertion-duplicates.outputs.result}}"
+        INSERTION-EDGE_RESULTS:       "${{steps.insertion-edge.outputs.result}}"
+        SELECTION-BASIC_RESULTS:      "${{steps.selection-basic.outputs.result}}"
+        SELECTION-SORTED_RESULTS:     "${{steps.selection-sorted.outputs.result}}"
+        SELECTION-REVERSE_RESULTS:    "${{steps.selection-reverse.outputs.result}}"
+        SELECTION-DUPLICATES_RESULTS: "${{steps.selection-duplicates.outputs.result}}"
+      with:
+        runners: build,bubble-basic,bubble-sorted,bubble-reverse,bubble-duplicates,bubble-edge,insertion-basic,insertion-sorted,insertion-reverse,insertion-duplicates,insertion-edge,selection-basic,selection-sorted,selection-reverse,selection-duplicates
